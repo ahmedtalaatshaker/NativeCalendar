@@ -20,7 +20,7 @@ public class CalendarDayCell: UICollectionViewCell {
         return dateFormatter
     }()
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         isAccessibilityElement = true
         accessibilityTraits = .button
