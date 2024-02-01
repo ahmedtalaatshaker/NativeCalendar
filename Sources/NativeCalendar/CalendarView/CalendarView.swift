@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class CalendarView: UIView, UICollectionViewDelegate {
+class CalendarView: UIView, UICollectionViewDelegate {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
