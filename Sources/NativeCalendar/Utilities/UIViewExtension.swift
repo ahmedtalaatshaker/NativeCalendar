@@ -7,11 +7,13 @@
 
 import UIKit
 extension UIView {
+
     @discardableResult
-    public func fromNib<T: UIView>(type: T.Type) -> UIView? {
-        let nibName = String(describing: type)
-        guard let view = Bundle(for: type).loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView else {
-            return nil
+    func fromNib<T: UIView>(viewType: T.Type, frombunde : Bundle? = nil) -> UIView? {
+        let nibName = String(describing: viewType)
+        guard let bundleName = frombunde else { return nil}
+        guard let view = bundleName.loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView else {
+            fatalError("Failed to instantiate nib \(nibName)")
         }
         self.addSubview(view)
         view.frame = self.bounds
@@ -22,5 +24,4 @@ extension UIView {
         view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         return view
     }
-
 }
