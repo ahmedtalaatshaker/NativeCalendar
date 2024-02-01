@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarDayCell: UICollectionViewCell {
+public class CalendarDayCell: UICollectionViewCell {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var eventIndicator: UIView!
