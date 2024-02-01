@@ -55,6 +55,10 @@ public class CalendarView: UIView, UICollectionViewDelegate {
             dayLabel.text = firstWeekDay.weekDays[dayLabel.tag]
         }
     }
+    
+    // TODO: selected date to retreive
+    public var getSelectedDate: ((Date) -> Void)!
+
     // -----------------------------------
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -73,10 +77,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
     }
-
-    // TODO: selected date to retreive
-    var getSelectedDate: ((Date) -> Void)!
-    
     
     @IBAction func moveMonth(_ sender: UIButton) {
         moveToMonth(month: sender.tag == 1 ? .next : .previous)

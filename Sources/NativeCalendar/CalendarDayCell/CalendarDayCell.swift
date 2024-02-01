@@ -44,7 +44,11 @@ class CalendarDayCell: UICollectionViewCell {
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        dayLabel.textColor = .label
+        if #available(iOS 13.0, *) {
+            dayLabel.textColor = .label
+        } else {
+            // Fallback on earlier versions
+        }
         
         eventIndicator.layer.cornerRadius = eventIndicator.frame.width / 2
     }
@@ -75,7 +79,11 @@ extension CalendarDayCell {
     func applyDefaultStyle(isWithinDisplayedMonth: Bool) {
         accessibilityTraits.remove(.selected)
         accessibilityHint = "Tap to select"
-        dayLabel.textColor = isWithinDisplayedMonth ? .label : .secondaryLabel
+        if #available(iOS 13.0, *) {
+            dayLabel.textColor = isWithinDisplayedMonth ? .label : .secondaryLabel
+        } else {
+            // Fallback on earlier versions
+        }
         selectionBackgroundView.isHidden = true
         eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
     }
