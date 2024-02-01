@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 public class CalendarView: UIView, UICollectionViewDelegate {
 
     @IBOutlet weak var containerView: UIView!
