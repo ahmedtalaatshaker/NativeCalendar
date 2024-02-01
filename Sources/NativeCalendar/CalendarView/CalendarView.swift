@@ -34,7 +34,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var startDate: Date!
     var firstWeekDay: dayWeek!
     
-    func setData(calendar: Calendar,
+    public func setData(calendar: Calendar,
          offDates: [Date],
          datesWithEvents: [Date],
          endDate: Date,

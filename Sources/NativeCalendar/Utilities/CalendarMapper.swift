@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum dayWeek: Int {
+public enum dayWeek: Int {
     case sunday = 1, monday, tuesday, wednesday, thursday, friday, saturday
     
     var weekDays: [String] {
