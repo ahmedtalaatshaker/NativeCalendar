@@ -75,7 +75,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
         let PathCalendar = UIImage(named: "PathCalendar", in: BMCoreManager.getFrameworkBundle(viewType: CalendarView.self), compatibleWith: nil)
-        calendarButton.setImage(PathCalendar, for: .normal)
+        calendarButton.imageView?.image = PathCalendar
     }
     
     @IBAction func moveMonth(_ sender: UIButton) {
