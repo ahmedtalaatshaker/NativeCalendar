@@ -12,7 +12,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet public weak var calendarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet var daysLabel: [UILabel]!
     
     internal var selectedDate = Date()
@@ -55,7 +55,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     // TODO: selected date to retreive
     public var getSelectedDate: ((Date) -> Void)!
-    public var updateHeight: ((CGFloat) -> Void)!
 
     // -----------------------------------
     required public init(coder aDecoder: NSCoder) {
@@ -87,16 +86,13 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    public func reloadCollectionView(){
+    func reloadCollectionView(){
 
         if isMonthView {
             daysToBeShown = days
         }else{
             daysToBeShown = Array(days[weekIndex.range])
         }
-                        self.layoutIfNeeded()
-                        self.setNeedsLayout()
-
         UIView.animate(withDuration: 1) {
             self.calendarCollectionView.reloadData()
         }
@@ -109,16 +105,15 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     internal var isMonthView: Bool = true {
         didSet {
             weekIndex = .first
-            
-            updateHeight( self.isMonthView ?  CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue)
+            self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
 
-//            UIView.animate(withDuration: 0.2, animations: {
-//                self.layoutIfNeeded()
+            UIView.animate(withDuration: 0.2, animations: {
+                self.layoutIfNeeded()
 //                self.setNeedsLayout()
-//
-//            }) { completed in
-//                self.reloadCollectionView()
-//            }
+
+            }) { completed in
+                self.reloadCollectionView()
+            }
         }
     }
     
