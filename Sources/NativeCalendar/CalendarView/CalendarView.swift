@@ -80,7 +80,8 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     }
     
     private func setupCalendarCollectionView(){
-        calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: "CalendarDayCell")
+        calendarCollectionView.registerReusableCell(CalendarDayCell.self)
+//        calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: "CalendarDayCell")
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -142,4 +143,37 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         return dateFormatter
     }()
     
+}
+
+
+extension UICollectionView {
+    
+    public func registerReusableCell<T: UICollectionViewCell>(_ cells: T.Type) where T: ReusableView {
+        if let nib = T.nib {
+            register(nib, forCellWithReuseIdentifier: T.reusableIdentifier)
+        } else {
+            register(T.self, forCellWithReuseIdentifier: T.reusableIdentifier)
+        }
+    }
+    
+    
+}
+
+public protocol ReusableView: AnyObject {
+    static var reusableIdentifier: String { get }
+    static var nib: UINib? { get }
+}
+
+public extension ReusableView where Self: UIView {
+
+    static var reusableIdentifier: String { return String(describing: self) }
+    static var nib: UINib? {
+         if Bundle.init(for: Self.self).path(forResource: String(describing: self), ofType: "nib") != nil {
+            return UINib(nibName: String(describing: self), bundle: Bundle.init(for: Self.self))
+         }else if (CoreManager.getFrameworkBundle(viewType: Self.self).path(forResource: String(describing: self), ofType: "nib")) != nil {
+             return UINib(nibName: String(describing: self), bundle: CoreManager.getFrameworkBundle(viewType: Self.self))
+        }else {
+            return nil
+        }
+    }
 }
