@@ -12,7 +12,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet public weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet var daysLabel: [UILabel]!
     
     internal var selectedDate = Date()
