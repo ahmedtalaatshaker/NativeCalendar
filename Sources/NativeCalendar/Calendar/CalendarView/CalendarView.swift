@@ -87,7 +87,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func reloadCollectionView(){
+    public func reloadCollectionView(){
 
         if isMonthView {
             daysToBeShown = days
