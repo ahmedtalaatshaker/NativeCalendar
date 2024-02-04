@@ -20,15 +20,18 @@ extension CalendarView {
     }
     
     func moveToMonth(month: Month){
+        defer {
+            reloadCollectionView()
+        }
         if isMonthView {
             baseDate = getMonthWith(value: month == .next ? 1 : -1)
-            reloadCollectionView()
+//            reloadCollectionView()
         }else{
             if month == .next {
                 if weekIndex == .sixth {
                     weekIndex = .second
                     baseDate = getMonthWith(value: 1)
-                    reloadCollectionView()
+//                    reloadCollectionView()
                     
                 }else if weekIndex == .fifth {
                     if numOfWeeksInMonth() == 5 {
@@ -40,22 +43,22 @@ extension CalendarView {
                         let nextMonth = getMonthWith(value: 1)
                         if nextMonth != baseDate {
                             baseDate = nextMonth
-                            reloadCollectionView()
+//                            reloadCollectionView()
                         }else{
                             weekIndex = .fifth
                         }
                     }else{
                         weekIndex = weekIndex.next
-                        reloadCollectionView()
+//                        reloadCollectionView()
                     }
                 }else {
                     weekIndex = weekIndex.next
-                    reloadCollectionView()
+//                    reloadCollectionView()
                 }
             }else{
                 if weekIndex != .first {
                     weekIndex = weekIndex.previous
-                    reloadCollectionView()
+//                    reloadCollectionView()
                 }else{
                     if getMonthWith(value: -1) == baseDate {
                         return
@@ -67,7 +70,7 @@ extension CalendarView {
                         weekIndex = weekIndex.previous
                         break
                     }
-                    reloadCollectionView()
+//                    reloadCollectionView()
                 }
             }
         }
