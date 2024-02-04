@@ -108,9 +108,9 @@ public class CalendarView: UIView, UICollectionViewDelegate {
             
             UIView.animate(withDuration: 0.2, animations: {
                 self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
+                self.layoutIfNeeded()
 
             }) { completed in
-                self.layoutIfNeeded()
                 self.setNeedsLayout()
 
                 self.reloadCollectionView()
