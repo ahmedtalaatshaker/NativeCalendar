@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Helpers {
+public struct Helpers {
     static var shared = Helpers()
     func getDate(dateString: [String]) -> [Date] {
         let dateFormatter = DateFormatter()
@@ -20,5 +20,4 @@ struct Helpers {
         }
         return dates
     }
-
 }
