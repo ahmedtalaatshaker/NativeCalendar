@@ -107,13 +107,13 @@ public class CalendarView: UIView, UICollectionViewDelegate {
             weekIndex = .first
             self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
 
-            UIView.animate(withDuration: 0.2, animations: {
+//            UIView.animate(withDuration: 0.2, animations: {
                 self.layoutIfNeeded()
                 self.setNeedsLayout()
 
-            }) { completed in
+//            }) { completed in
                 self.reloadCollectionView()
-            }
+//            }
         }
     }
     
