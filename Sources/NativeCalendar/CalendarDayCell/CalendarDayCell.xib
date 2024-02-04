@@ -9,15 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarDayCell" customModule="NativeCalendar">
-            <connections>
-                <outlet property="dayLabel" destination="5w1-tb-QPc" id="mcY-m1-Xhk"/>
-                <outlet property="eventIndicator" destination="0TA-1g-a4v" id="syI-ht-8mL"/>
-                <outlet property="selectionBackgroundView" destination="bBZ-YR-atK" id="MS9-5L-zJp"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CalendarDayCell" customModule="NativeCalendar">
             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -67,6 +61,11 @@
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qrP-Aq-1Uh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dayLabel" destination="5w1-tb-QPc" id="yU6-FQ-1EO"/>
+                <outlet property="eventIndicator" destination="0TA-1g-a4v" id="cvT-pR-7Vo"/>
+                <outlet property="selectionBackgroundView" destination="bBZ-YR-atK" id="3SC-Mr-Fwj"/>
+            </connections>
             <point key="canvasLocation" x="6" y="0.0"/>
         </view>
     </objects>

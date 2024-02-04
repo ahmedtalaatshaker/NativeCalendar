@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class CalendarDayCell: UICollectionViewCell {
+class CalendarDayCell: UICollectionViewCell {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var eventIndicator: UIView!
@@ -24,9 +24,12 @@ public class CalendarDayCell: UICollectionViewCell {
         super.awakeFromNib()
         isAccessibilityElement = true
         accessibilityTraits = .button
-        setupView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+
     func setDay(day: Day?, isMonthView: Bool){
         guard let day = day else { return }
         self.day = day
