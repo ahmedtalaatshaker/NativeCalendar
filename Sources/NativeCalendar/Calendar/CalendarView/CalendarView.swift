@@ -93,9 +93,9 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         }else{
             daysToBeShown = Array(days[weekIndex.range])
         }
-        UIView.animate(withDuration: 1) {
+//        UIView.animate(withDuration: 1) {
             self.calendarCollectionView.reloadData()
-        }
+//        }
     }
     
     @IBAction func changeMonth_WeekView(_ sender: UIButton) {
@@ -106,7 +106,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         didSet {
             weekIndex = .first
             
-            UIView.superclass()?.animate(withDuration: 0.2, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
                 self.layoutIfNeeded()
                 self.setNeedsLayout()
