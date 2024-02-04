@@ -26,12 +26,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     
     // ---------------------- TODO: pass from outside -------------------
-    var calendar: Calendar!
-    var offDates: [Date]!
-    var datesWithEvents: [Date]!
-    var endDate: Date!
-    var startDate: Date!
-    var firstWeekDay: dayWeek!
+    public var calendar: Calendar!
+    public var offDates: [Date]!
+    public var datesWithEvents: [Date]!
+    public var endDate: Date!
+    public var startDate: Date!
+    public var firstWeekDay: dayWeek!
     
     public func setData(calendar: Calendar,
          offDates: [Date],
