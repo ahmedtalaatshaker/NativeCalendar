@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarView" customModule="NativeCalendar">
             <connections>
-                <outlet property="calendarButton" destination="uFi-40-IjI" id="nRd-nq-9rH"/>
                 <outlet property="calendarCollectionView" destination="TRG-Ee-R6f" id="SvE-lb-m6s"/>
                 <outlet property="calendarHeightConstraint" destination="wuS-LI-n6H" id="WYu-ho-cx8"/>
                 <outlet property="containerView" destination="Rv6-QE-df1" id="fqD-ZY-0GM"/>

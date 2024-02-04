@@ -14,7 +14,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet var daysLabel: [UILabel]!
-    @IBOutlet weak var calendarButton: UIButton!
     
     internal var selectedDate = Date()
     internal var selectedDateCell: CalendarDayCell!
@@ -74,8 +73,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
-        let PathCalendar = UIImage(named: "PathCalendar", in: BMCoreManager.getFrameworkBundle(viewType: CalendarView.self), compatibleWith: nil)
-        calendarButton.imageView?.image = PathCalendar
     }
     
     @IBAction func moveMonth(_ sender: UIButton) {
@@ -145,23 +142,4 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         return dateFormatter
     }()
     
-}
-
-
-public class BMCoreManager {
-
-    
-    public static func getFrameworkBundle<T>(viewType: T.Type) -> Bundle {
-#if SWIFT_PACKAGE
-        return Bundle.module
-#else
-        return Bundle(for: viewType.self as! AnyClass)
-#endif
-    }
-
-    public static func subscribe() {
-//        UIFont.registerCustomFonts()
-       // BMGoogleMapManger.shared.initiateMapService(key: "AIzaSyDQf43yGsqk2HFsmDZUMTqvU3OnMnl3e8Y")
-    }
-
 }
