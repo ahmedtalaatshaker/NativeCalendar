@@ -8,6 +8,8 @@
 import Foundation
 public struct Helpers {
     public static var shared = Helpers()
+    
+    /// Dates must be in "dd/MM/yyyy" Format
     public func getDate(dateString: [String]) -> [Date] {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
