@@ -10,7 +10,7 @@ import UIKit
 public class CalendarView: UIView, UICollectionViewDelegate {
 
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var calendarCollectionView: UICollectionView!
+    @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet var daysLabel: [UILabel]!
@@ -81,6 +81,9 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     }
     
     private func setupCalendarCollectionView(){
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        calendarCollectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
         calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: identifier)
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
