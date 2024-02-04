@@ -14,17 +14,16 @@ extension CalendarView: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        var day = daysToBeShown[indexPath.row]
-//        // TODO: here is the error
+        var day = daysToBeShown[indexPath.row]
+        // TODO: here is the error
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: identifier,
             for: indexPath) as! CalendarDayCell
-//        day.cellIndex = indexPath.row
-//        cell.setDay(day: day, isMonthView: isMonthView)
-//        if day.isSelected {
-//            selectedDateCell = cell
-//        }
-        cell.dayLabel.text = "1"
+        day.cellIndex = indexPath.row
+        cell.setDay(day: day, isMonthView: isMonthView)
+        if day.isSelected {
+            selectedDateCell = cell
+        }
         return cell
     }
 }
