@@ -24,7 +24,7 @@ public class CalendarDayCell: UICollectionViewCell, ReusableView {
         super.awakeFromNib()
         isAccessibilityElement = true
         accessibilityTraits = .button
-        setupView()
+//        setupView()
     }
     
     func setDay(day: Day?, isMonthView: Bool){
