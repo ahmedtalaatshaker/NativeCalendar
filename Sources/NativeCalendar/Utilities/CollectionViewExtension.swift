@@ -17,7 +17,7 @@ extension CalendarView: UICollectionViewDataSource {
         var day = daysToBeShown[indexPath.row]
         // TODO: here is the error
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "CalendarDayCell",
+            withReuseIdentifier: identifier,
             for: indexPath) as! CalendarDayCell
         day.cellIndex = indexPath.row
         cell.setDay(day: day, isMonthView: isMonthView)

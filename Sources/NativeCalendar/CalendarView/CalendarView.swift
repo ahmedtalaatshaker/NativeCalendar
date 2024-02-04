@@ -26,12 +26,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     
     // ---------------------- TODO: pass from outside -------------------
-    public var calendar: Calendar!
-    public var offDates: [Date]!
-    public var datesWithEvents: [Date]!
-    public var endDate: Date!
-    public var startDate: Date!
-    public var firstWeekDay: dayWeek!
+    var calendar: Calendar!
+    var offDates: [Date]!
+    var datesWithEvents: [Date]!
+    var endDate: Date!
+    var startDate: Date!
+    var firstWeekDay: dayWeek!
     
     public func setData(calendar: Calendar,
          offDates: [Date],
@@ -81,9 +81,10 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         moveToMonth(month: sender.tag == 1 ? .next : .previous)
     }
     
+    let identifier = String(describing: CalendarDayCell.self)
+
     private func setupCalendarCollectionView(){
-        let nib = UINib(nibName: "CalendarDayCell", bundle: nil)
-        calendarCollectionView.register(nib, forCellWithReuseIdentifier: "CalendarDayCell")
+        calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: identifier)
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
