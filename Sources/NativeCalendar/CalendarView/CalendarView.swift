@@ -80,9 +80,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     }
     
     private func setupCalendarCollectionView(){
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        calendarCollectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
         calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: "CalendarDayCell")
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
