@@ -24,7 +24,6 @@ public class CalendarDayCell: UICollectionViewCell {
         super.awakeFromNib()
         isAccessibilityElement = true
         accessibilityTraits = .button
-//        setupView()
     }
     
     func setDay(day: Day?, isMonthView: Bool){
@@ -36,7 +35,7 @@ public class CalendarDayCell: UICollectionViewCell {
         eventIndicator.isHidden = !day.isHaveEvents
     }
     
-    private func setupView(){
+    func setupView(){
         selectionBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         selectionBackgroundView.clipsToBounds = true
         selectionBackgroundView.layer.cornerRadius = selectionBackgroundView.frame.width / 2
