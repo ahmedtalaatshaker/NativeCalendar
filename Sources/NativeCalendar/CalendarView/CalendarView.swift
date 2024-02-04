@@ -22,7 +22,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     var weekIndex = WeekIndex.first
     var userSelectedDate = Date()
-    let identifier = String(describing: CalendarDayCell.self)
     
     // ---------------------- TODO: pass from outside -------------------
     var calendar: Calendar!
@@ -84,7 +83,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         calendarCollectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
-        calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: identifier)
+        calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: "CalendarDayCell")
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
