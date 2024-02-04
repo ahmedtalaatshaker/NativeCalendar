@@ -55,7 +55,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     // TODO: selected date to retreive
     public var getSelectedDate: ((Date) -> Void)!
-    public var updateHeight: ((CGFloat) -> Void)!
 
     // -----------------------------------
     required public init(coder aDecoder: NSCoder) {
@@ -106,15 +105,14 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     internal var isMonthView: Bool = true {
         didSet {
             weekIndex = .first
-            updateHeight(self.isMonthView ? CalendarHeight.fullHeight_monthMode.rawValue : CalendarHeight.fullHeight_weekMode.rawValue)
+            self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
 
-            UIView.animate(withDuration: 0.3, animations: {
-//                updateHeight(self.isMonthView ? CalendarHeight.fullHeight_monthMode.rawValue : CalendarHeight.fullHeight_weekMode.rawValue)
-//                self.layoutIfNeeded()
-//                self.setNeedsLayout()
-                self.reloadCollectionView()
+            UIView.animate(withDuration: 0.2, animations: {
+                self.layoutIfNeeded()
+                self.setNeedsLayout()
 
             }) { completed in
+                self.reloadCollectionView()
             }
         }
     }
