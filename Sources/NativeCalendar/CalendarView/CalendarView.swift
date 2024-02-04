@@ -22,8 +22,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     var weekIndex = WeekIndex.first
     var userSelectedDate = Date()
-
-    
+    let identifier = String(describing: CalendarDayCell.self)
     
     // ---------------------- TODO: pass from outside -------------------
     var calendar: Calendar!
@@ -59,12 +58,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     public var getSelectedDate: ((Date) -> Void)!
 
     // -----------------------------------
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         self.initUi()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.initUi()
     }
@@ -81,8 +80,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         moveToMonth(month: sender.tag == 1 ? .next : .previous)
     }
     
-    let identifier = String(describing: CalendarDayCell.self)
-
     private func setupCalendarCollectionView(){
         calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: identifier)
         calendarCollectionView.dataSource = self
