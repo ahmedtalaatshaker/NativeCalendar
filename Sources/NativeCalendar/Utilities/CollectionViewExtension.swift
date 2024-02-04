@@ -19,7 +19,6 @@ extension CalendarView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "CalendarDayCell",
             for: indexPath) as! CalendarDayCell
-        cell.setupView()
         day.cellIndex = indexPath.row
         cell.setDay(day: day, isMonthView: isMonthView)
         if day.isSelected {
