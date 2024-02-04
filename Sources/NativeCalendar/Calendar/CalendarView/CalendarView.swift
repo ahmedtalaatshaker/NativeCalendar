@@ -8,7 +8,7 @@
 import UIKit
 
 public class CalendarView: UIView, UICollectionViewDelegate {
-
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
@@ -32,11 +32,11 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var firstWeekDay: dayWeek!
     
     public func setData(calendar: Calendar,
-         offDates: [Date],
-         datesWithEvents: [Date],
-         endDate: Date,
-         startDate: Date,
-         firstWeekDay: dayWeek) {
+                        offDates: [Date],
+                        datesWithEvents: [Date],
+                        endDate: Date,
+                        startDate: Date,
+                        firstWeekDay: dayWeek) {
         self.calendar = calendar
         self.offDates = offDates
         self.datesWithEvents = datesWithEvents
@@ -55,7 +55,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     // TODO: selected date to retreive
     public var getSelectedDate: ((Date) -> Void)!
-
+    
     // -----------------------------------
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -66,7 +66,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         super.init(frame: frame)
         self.initUi()
     }
-
+    
     func initUi(){
         fromNib(viewType: Self.self, frombunde: Bundle.module)
         setupCalendarCollectionView()
@@ -87,7 +87,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     }
     
     func reloadCollectionView(){
-
+        
         if isMonthView {
             daysToBeShown = days
         }else{
@@ -106,14 +106,11 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         didSet {
             weekIndex = .first
             self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
-
-//            UIView.animate(withDuration: 0.2, animations: {
-                self.layoutIfNeeded()
-                self.setNeedsLayout()
-
-//            }) { completed in
-                self.reloadCollectionView()
-//            }
+            
+            self.layoutIfNeeded()
+            self.setNeedsLayout()
+            
+            self.reloadCollectionView()
         }
     }
     

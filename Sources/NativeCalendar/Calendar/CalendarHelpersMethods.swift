@@ -57,7 +57,11 @@ extension CalendarView {
                     weekIndex = weekIndex.previous
                     reloadCollectionView()
                 }else{
-                    baseDate = getMonthWith(value: -1)
+                    if getMonthWith(value: -1) == baseDate {
+                        return
+                    } else{
+                        baseDate = getMonthWith(value: -1)
+                    }
                     weekIndex = numOfWeeksInMonth() == 5 ? .fifth : .sixth
                     for day in daysToBeShown where !day.isWithinDisplayedMonth {
                         weekIndex = weekIndex.previous
