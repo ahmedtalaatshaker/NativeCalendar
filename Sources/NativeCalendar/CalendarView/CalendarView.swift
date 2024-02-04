@@ -14,7 +14,8 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet var daysLabel: [UILabel]!
-
+    @IBOutlet weak var calendarButton: UIButton!
+    
     internal var selectedDate = Date()
     internal var selectedDateCell: CalendarDayCell!
     internal lazy var days = generateDaysInMonth(for: baseDate)
@@ -73,6 +74,8 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
+        let PathCalendar = UIImage(named: "PathCalendar", in: Bundle.module, compatibleWith: nil)
+        calendarButton.setImage(PathCalendar, for: .normal)
     }
     
     @IBAction func moveMonth(_ sender: UIButton) {
