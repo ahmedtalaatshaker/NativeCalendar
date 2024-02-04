@@ -24,15 +24,6 @@ public class CalendarDayCell: UICollectionViewCell, ReusableView {
         super.awakeFromNib()
         isAccessibilityElement = true
         accessibilityTraits = .button
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-
         setupView()
     }
     
