@@ -55,6 +55,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     // TODO: selected date to retreive
     public var getSelectedDate: ((Date) -> Void)!
+    public var updateHeight: ((CGFloat) -> Void)!
 
     // -----------------------------------
     required public init(coder aDecoder: NSCoder) {
@@ -93,9 +94,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         }else{
             daysToBeShown = Array(days[weekIndex.range])
         }
-//        UIView.animate(withDuration: 1) {
+                        self.layoutIfNeeded()
+                        self.setNeedsLayout()
+
+        UIView.animate(withDuration: 1) {
             self.calendarCollectionView.reloadData()
-//        }
+        }
     }
     
     @IBAction func changeMonth_WeekView(_ sender: UIButton) {
@@ -106,14 +110,15 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         didSet {
             weekIndex = .first
             
-            UIView.animate(withDuration: 0.2, animations: {
-                self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
-                self.layoutIfNeeded()
-                self.setNeedsLayout()
+            updateHeight( self.isMonthView ?  CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue)
 
-            }) { completed in
-                self.reloadCollectionView()
-            }
+//            UIView.animate(withDuration: 0.2, animations: {
+//                self.layoutIfNeeded()
+//                self.setNeedsLayout()
+//
+//            }) { completed in
+//                self.reloadCollectionView()
+//            }
         }
     }
     
