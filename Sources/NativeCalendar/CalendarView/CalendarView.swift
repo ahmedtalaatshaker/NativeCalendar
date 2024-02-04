@@ -74,7 +74,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
-        let PathCalendar = UIImage(named: "PathCalendar", in: Bundle.module, compatibleWith: nil)
+        let PathCalendar = UIImage(named: "PathCalendar", in: BMCoreManager.getFrameworkBundle(viewType: CalendarView.self), compatibleWith: nil)
         calendarButton.setImage(PathCalendar, for: .normal)
     }
     
@@ -147,3 +147,21 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
 }
 
+
+public class BMCoreManager {
+
+    
+    public static func getFrameworkBundle<T>(viewType: T.Type) -> Bundle {
+#if SWIFT_PACKAGE
+        return Bundle.module
+#else
+        return Bundle(for: viewType.self as! AnyClass)
+#endif
+    }
+
+    public static func subscribe() {
+//        UIFont.registerCustomFonts()
+       // BMGoogleMapManger.shared.initiateMapService(key: "AIzaSyDQf43yGsqk2HFsmDZUMTqvU3OnMnl3e8Y")
+    }
+
+}
