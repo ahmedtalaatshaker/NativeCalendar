@@ -7,7 +7,7 @@
 
 import Foundation
 public struct Helpers {
-    static var shared = Helpers()
+    public static var shared = Helpers()
     func getDate(dateString: [String]) -> [Date] {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
