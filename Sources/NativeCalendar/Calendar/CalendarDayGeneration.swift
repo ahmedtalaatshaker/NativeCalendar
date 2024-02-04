@@ -80,7 +80,7 @@ extension CalendarView {
         return Day(
             date: date,
             number: dateFormatterShowDays.string(from: date),
-            isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
+            isSelected: calendar.isDate(date, inSameDayAs: userSelectedDate),
             isWithinDisplayedMonth: isWithinDisplayedMonth,
             isHaveEvents: datesWithEvents.contains(date),
             cellIndex: 0,
