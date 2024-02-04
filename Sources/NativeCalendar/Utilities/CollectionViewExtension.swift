@@ -22,7 +22,6 @@ extension CalendarView: UICollectionViewDataSource {
 //        if day.isSelected {
 //            selectedDateCell = cell
 //        }
-        cell.dayLabel.text = "1"
         return cell
     }
 }
