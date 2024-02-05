@@ -79,7 +79,8 @@ public class CalendarView: UIView, UICollectionViewDelegate {
                         datesWithEvents: [Date],
                         endDate: Date,
                         startDate: Date,
-                        firstWeekDay: dayWeek, 
+                        firstWeekDay: dayWeek,
+                        selectionType: SelectionType,
                         getSelectedDate: @escaping (([TimeInterval]) -> Void)) {
         self.calendar = calendar
         self.offDates = offDates
@@ -88,6 +89,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         self.startDate = startDate
         self.firstWeekDay = firstWeekDay
         self.getSelectedDate = getSelectedDate
+        self.selectionType = selectionType
         
         if startDate > baseDate {
             baseDate = startDate
