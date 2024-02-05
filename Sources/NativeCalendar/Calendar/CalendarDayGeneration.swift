@@ -79,9 +79,22 @@ extension CalendarView {
             to: baseDate) ?? baseDate
         
         var isSelected = false
-        for selectedDate in userSelectedDate where calendar.isDate(date, inSameDayAs: Date(timeIntervalSince1970: selectedDate)){
-            isSelected = true
-            break
+        userSelectedDate.sort()
+
+
+        for selectedDateUTC in userSelectedDate {
+            let selectedDate = Date(timeIntervalSince1970: selectedDateUTC)
+            if calendar.isDate(date, inSameDayAs: selectedDate) {
+                isSelected = true
+            }
+        }
+        
+        if !isSelected &&
+            selectionType == .from_to &&
+            userSelectedDate.count == 2 {
+            let selectedDateFrom = Date(timeIntervalSince1970: userSelectedDate[0])
+            let selectedDateTo = Date(timeIntervalSince1970: userSelectedDate[1])
+            isSelected = date < selectedDateTo && date > selectedDateFrom
         }
 
         return Day(
