@@ -7,6 +7,7 @@
 
 import Foundation
 // MARK: - Day Generation
+@available(iOS 13.0, *)
 extension CalendarView {
     
     func monthMetadata(for baseDate: Date) throws -> MonthMetadata {

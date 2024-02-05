@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 public class CalendarView: UIView, UICollectionViewDelegate {
     
     @IBOutlet weak var containerView: UIView!
@@ -32,6 +33,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var firstWeekDay: dayWeek!
     var getSelectedDate: ((Date) -> Void)!
     
+    // Cell Colors
+    var defaultLabelColor: UIColor!
+    var selectedLabelColor: UIColor!
+    var offDaysColor: UIColor!
+    var selectedBGColor: UIColor!
+    
     public func setData(calendar: Calendar,
                         offDates: [Date],
                         datesWithEvents: [Date],
@@ -55,6 +62,17 @@ public class CalendarView: UIView, UICollectionViewDelegate {
             dayLabel.text = firstWeekDay.weekDays[dayLabel.tag]
         }
     }
+    
+    public func setCellStyle(defaultLabelColor: UIColor = .label,
+                             selectedLabelColor: UIColor = .white,
+                             offDaysColor: UIColor = .secondaryLabel,
+                             selectedBGColor: UIColor = .red) {
+        self.defaultLabelColor = defaultLabelColor
+        self.selectedLabelColor = selectedLabelColor
+        self.offDaysColor = offDaysColor
+        self.selectedBGColor = selectedBGColor
+    }
+    
     // -----------------------------------
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

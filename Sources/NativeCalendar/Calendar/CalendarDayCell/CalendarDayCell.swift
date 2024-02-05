@@ -13,6 +13,11 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var eventIndicator: UIView!
     var day: Day?
     
+    var defaultLabelColor: UIColor!
+    var selectedLabelColor: UIColor!
+    var offDaysColor: UIColor!
+    var selectedBGColor: UIColor!
+
     private lazy var accessibilityDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
@@ -47,13 +52,19 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        if #available(iOS 13.0, *) {
-            dayLabel.textColor = .label
-        } else {
-            // Fallback on earlier versions
-        }
-        
+        dayLabel.textColor = defaultLabelColor
         eventIndicator.layer.cornerRadius = eventIndicator.frame.width / 2
+    }
+    
+    func setColors(defaultLabelColor: UIColor,
+                   selectedLabelColor: UIColor,
+                   offDaysColor: UIColor,
+                   selectedBGColor: UIColor) {
+        self.defaultLabelColor = defaultLabelColor
+        self.selectedLabelColor = selectedLabelColor
+        self.offDaysColor = offDaysColor
+        self.selectedBGColor = selectedBGColor
+        selectionBackgroundView.backgroundColor = selectedBGColor
     }
 }
 
@@ -73,8 +84,8 @@ extension CalendarDayCell {
     func applySelectedStyle() {
         accessibilityTraits.insert(.selected)
         accessibilityHint = nil
-        dayLabel.textColor = .white
-        eventIndicator.backgroundColor = .white
+        dayLabel.textColor = selectedLabelColor
+        eventIndicator.backgroundColor = selectedLabelColor
         selectionBackgroundView.isHidden = false
     }
     
@@ -82,11 +93,7 @@ extension CalendarDayCell {
     func applyDefaultStyle(isWithinDisplayedMonth: Bool) {
         accessibilityTraits.remove(.selected)
         accessibilityHint = "Tap to select"
-        if #available(iOS 13.0, *) {
-            dayLabel.textColor = isWithinDisplayedMonth ? .label : .secondaryLabel
-        } else {
-            // Fallback on earlier versions
-        }
+        dayLabel.textColor = isWithinDisplayedMonth ? defaultLabelColor : offDaysColor
         selectionBackgroundView.isHidden = true
         eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
     }

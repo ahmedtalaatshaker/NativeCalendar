@@ -8,6 +8,7 @@
 import UIKit
 
 // MARK: - UICollectionViewDataSource
+@available(iOS 13.0, *)
 extension CalendarView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         daysToBeShown.count
@@ -17,6 +18,10 @@ extension CalendarView: UICollectionViewDataSource {
         var day = daysToBeShown[indexPath.row]
         // TODO: here is the error
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCell", for: indexPath) as! CalendarDayCell
+        cell.setColors(defaultLabelColor: defaultLabelColor,
+                       selectedLabelColor: selectedLabelColor,
+                       offDaysColor: offDaysColor,
+                       selectedBGColor: selectedBGColor)
         cell.setupView()
         day.cellIndex = indexPath.row
         cell.setDay(day: day, isMonthView: isMonthView)
@@ -28,6 +33,7 @@ extension CalendarView: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
+@available(iOS 13.0, *)
 extension CalendarView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var index = indexPath.row
