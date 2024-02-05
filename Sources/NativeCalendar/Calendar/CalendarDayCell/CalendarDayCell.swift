@@ -79,11 +79,15 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     func setFromTo(text: String) {
         fromToLabel.isHidden = false
         fromToLabel.text = text
+        leftBG.isHidden = text == From_to.to.rawValue
+        rightBG.isHidden = text == From_to.from.rawValue
     }
     
     func showLeft_rightBGs() {
         leftBG.isHidden = false
         rightBG.isHidden = false
+        
+        selectionBackgroundView.layer.cornerRadius = 0
     }
 
 }

@@ -116,13 +116,18 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     func setFromToLabel(days: inout [Day]) {
         if userSelectedDate.count != 2 { return }
         for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
-            days[dayIndex].fromToLabel = "From"
+            days[dayIndex].fromToLabel = From_to.from.rawValue
         }
         
         for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[1] {
-            days[dayIndex].fromToLabel = "To"
+            days[dayIndex].fromToLabel = From_to.to.rawValue
         }
     }
     
     
+}
+
+enum From_to: String {
+    case from = "From"
+    case to = "To"
 }
