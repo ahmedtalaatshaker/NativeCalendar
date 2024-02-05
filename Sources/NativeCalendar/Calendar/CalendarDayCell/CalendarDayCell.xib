@@ -52,10 +52,7 @@
                     </constraints>
                 </view>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
-                    <rect key="frame" x="2.6666666666666679" y="1.9999999999999996" width="55" height="7.3333333333333321"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="55" id="v2N-OT-vWq"/>
-                    </constraints>
+                    <rect key="frame" x="10" y="1.9999999999999996" width="40" height="7.3333333333333321"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="6"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -68,6 +65,7 @@
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9pP-te-vhz"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I4C-tt-5cG"/>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCm-TY-hUP"/>
+                <constraint firstItem="mpb-Ql-UkG" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="leading" id="cjC-c5-jdA"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qrP-Aq-1Uh"/>
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="uD4-Hg-b1t"/>
             </constraints>
