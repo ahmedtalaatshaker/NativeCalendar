@@ -34,10 +34,10 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var getSelectedDate: ((Date) -> Void)!
     
     // Cell Colors
-    var defaultLabelColor: UIColor!
-    var selectedLabelColor: UIColor!
-    var offDaysColor: UIColor!
-    var selectedBGColor: UIColor!
+    var defaultLabelColor: UIColor = .label
+    var selectedLabelColor: UIColor = .white
+    var offDaysColor: UIColor = .secondaryLabel
+    var selectedBGColor: UIColor = .red
     
     public func setData(calendar: Calendar,
                         offDates: [Date],
@@ -63,10 +63,10 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         }
     }
     
-    public func setCellStyle(defaultLabelColor: UIColor = .label,
-                             selectedLabelColor: UIColor = .white,
-                             offDaysColor: UIColor = .secondaryLabel,
-                             selectedBGColor: UIColor = .red) {
+    public func setCellStyle(defaultLabelColor: UIColor,
+                             selectedLabelColor: UIColor,
+                             offDaysColor: UIColor,
+                             selectedBGColor: UIColor) {
         self.defaultLabelColor = defaultLabelColor
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
