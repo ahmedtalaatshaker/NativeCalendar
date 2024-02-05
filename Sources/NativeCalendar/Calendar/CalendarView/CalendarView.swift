@@ -145,11 +145,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         }else{
             daysToBeShown = Array(days[weekIndex.range])
         }
+        self.calendarCollectionView.reloadData()
+
         UIView.animate(withDuration: 1) {
             self.layoutIfNeeded()
             self.setNeedsLayout()
         } completion: { _ in
-            self.calendarCollectionView.reloadData()
 
         }
 
