@@ -51,8 +51,11 @@
                         <constraint firstItem="5w1-tb-QPc" firstAttribute="top" secondItem="Xxf-VY-wH5" secondAttribute="top" id="yLL-WH-LbU"/>
                     </constraints>
                 </view>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
-                    <rect key="frame" x="10" y="3.9999999999999996" width="15.666666666666664" height="7.3333333333333321"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
+                    <rect key="frame" x="10" y="1.9999999999999996" width="40" height="7.3333333333333321"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="v2N-OT-vWq"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="6"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -62,11 +65,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8XK-No-JYS"/>
+                <constraint firstItem="mpb-Ql-UkG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9pP-te-vhz"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I4C-tt-5cG"/>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCm-TY-hUP"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qrP-Aq-1Uh"/>
-                <constraint firstItem="mpb-Ql-UkG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="uD4-Hg-b1t"/>
-                <constraint firstItem="mpb-Ql-UkG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="zTR-NL-AQC"/>
+                <constraint firstItem="mpb-Ql-UkG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="uD4-Hg-b1t"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
