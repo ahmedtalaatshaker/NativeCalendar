@@ -52,11 +52,11 @@
                     </constraints>
                 </view>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
-                    <rect key="frame" x="10" y="1.9999999999999996" width="40" height="7.3333333333333321"/>
+                    <rect key="frame" x="2.6666666666666679" y="1.9999999999999996" width="55" height="7.3333333333333321"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="v2N-OT-vWq"/>
+                        <constraint firstAttribute="width" constant="55" id="v2N-OT-vWq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="6"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="6"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
