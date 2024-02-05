@@ -36,7 +36,8 @@ public class CalendarView: UIView, UICollectionViewDelegate {
                         datesWithEvents: [Date],
                         endDate: Date,
                         startDate: Date,
-                        firstWeekDay: dayWeek) {
+                        firstWeekDay: dayWeek, 
+                        getSelectedDate: ((Date) -> Void)) {
         self.calendar = calendar
         self.offDates = offDates
         self.datesWithEvents = datesWithEvents
