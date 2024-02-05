@@ -38,8 +38,8 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         defer {
             getSelectedDate(userSelectedDate)
-
         }
+        
         var index = indexPath.row
         if !isMonthView {
             let currentRange = Array(weekIndex.range)
@@ -49,46 +49,20 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         if currentDay.isOffDay { return }
         if days[index].isSelected {
             if selectionType == .from_to {
-                if userSelectedDate.contains(days[index].utc) {
-                    userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
-                    days = setNotSelected(days: days)
-                    if !userSelectedDate.isEmpty {
-                        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
-                            days[dayIndex].isSelected = true
-                        }
-                    }
-                }
+                deselectFromToType(for: index)
             } else {
                 days[index].isSelected = false
                 userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
             }
-//            getSelectedDate(userSelectedDate)
             
         } else {
             switch selectionType {
             case .single:
-                days = setNotSelected(days: days)
-                days[index].isSelected = true
-                userSelectedDate = [days[index].date.timeIntervalSince1970]
-//                getSelectedDate(userSelectedDate)
-                
+                applySingleSelection(for: index)
             case .multi:
-                days[index].isSelected = true
-                userSelectedDate.append(days[index].date.timeIntervalSince1970)
-//                getSelectedDate(userSelectedDate)
-                
-                break
+                applyMultiSelection(for: index)
             case .from_to:
-                if userSelectedDate.count < 2 {
-                    days[index].isSelected = true
-                    userSelectedDate.append(days[index].date.timeIntervalSince1970)
-//                    getSelectedDate(userSelectedDate)
-                    if userSelectedDate.count == 2 {
-                        days = generateDaysInMonth(for: baseDate)
-                    }
-                }
-                
-                break
+                applyFromToSelection(for: index)
             }
         }
         
@@ -103,4 +77,40 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         let height = Int(collectionView.frame.height) / numberOfWeeksInBaseDate
         return CGSize(width: width, height: height)
     }
+    
+    private func applySingleSelection(for index: Int) {
+        days = setNotSelected(days: days)
+        days[index].isSelected = true
+        userSelectedDate = [days[index].date.timeIntervalSince1970]
+    }
+    
+    private func applyMultiSelection(for index: Int) {
+        days[index].isSelected = true
+        userSelectedDate.append(days[index].date.timeIntervalSince1970)
+    }
+
+    private func applyFromToSelection(for index: Int) {
+        if userSelectedDate.count < 2 {
+            days[index].isSelected = true
+            userSelectedDate.append(days[index].date.timeIntervalSince1970)
+
+            if userSelectedDate.count == 2 {
+                days = generateDaysInMonth(for: baseDate)
+            }
+        }
+    }
+
+    private func deselectFromToType(for index: Int) {
+        if userSelectedDate.contains(days[index].utc) {
+            userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
+            days = setNotSelected(days: days)
+            if !userSelectedDate.isEmpty {
+                for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
+                    days[dayIndex].isSelected = true
+                }
+            }
+        }
+    }
+    
+    
 }
