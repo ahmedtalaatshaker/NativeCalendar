@@ -52,7 +52,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
-                    <rect key="frame" x="10" y="3.9999999999999996" width="15.666666666666664" height="7.3333333333333321"/>
+                    <rect key="frame" x="10" y="4" width="15.666666666666664" height="5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="6"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
             <constraints>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8XK-No-JYS"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I4C-tt-5cG"/>
+                <constraint firstItem="bBZ-YR-atK" firstAttribute="top" secondItem="mpb-Ql-UkG" secondAttribute="bottom" constant="1" id="X0i-1G-GbJ"/>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCm-TY-hUP"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qrP-Aq-1Uh"/>
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="uD4-Hg-b1t"/>
