@@ -24,7 +24,42 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var weekIndex = WeekIndex.first
     var userSelectedDate = TimeInterval()
     
-    // ---------------------- TODO: pass from outside -------------------
+    internal var isMonthView: Bool = true {
+        didSet {
+            weekIndex = .first
+            self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
+            self.layoutIfNeeded()
+            self.setNeedsLayout()
+            self.reloadCollectionView()
+        }
+    }
+    
+    var baseDate: Date = Date() {
+        didSet {
+            days = generateDaysInMonth(for: baseDate)
+            monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
+        }
+    }
+    
+    internal var numberOfWeeksInBaseDate: Int {
+        isMonthView ? numOfWeeksInMonth() : 1
+    }
+    
+    internal lazy var dateFormatterShowDays: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d"
+        return dateFormatter
+    }()
+    
+    private lazy var dateFormatterShowMonth: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = calendar
+        dateFormatter.locale = Locale.autoupdatingCurrent
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMM y")
+        return dateFormatter
+    }()
+
+    // ---------------------- MARK: pass from outside -------------------
     var calendar: Calendar!
     var offDates: [Date]!
     var datesWithEvents: [Date]!
@@ -111,49 +146,21 @@ public class CalendarView: UIView, UICollectionViewDelegate {
             daysToBeShown = Array(days[weekIndex.range])
         }
         UIView.animate(withDuration: 1) {
+            self.layoutIfNeeded()
+            self.setNeedsLayout()
+        } completion: { _ in
             self.calendarCollectionView.reloadData()
+
         }
+
+//        UIView.animate(withDuration: 1) {
+//            self.calendarCollectionView.reloadData()
+//        }
     }
     
     @IBAction func changeMonth_WeekView(_ sender: UIButton) {
         isMonthView.toggle()
     }
     
-    internal var isMonthView: Bool = true {
-        didSet {
-            weekIndex = .first
-            self.calendarHeightConstraint.constant = self.isMonthView ? CalendarHeight.monthMode.rawValue : CalendarHeight.weekMode.rawValue
-            
-            self.layoutIfNeeded()
-            self.setNeedsLayout()
-            
-            self.reloadCollectionView()
-        }
-    }
-    
-    var baseDate: Date = Date() {
-        didSet {
-            days = generateDaysInMonth(for: baseDate)
-            monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
-        }
-    }
-    
-    internal var numberOfWeeksInBaseDate: Int {
-        isMonthView ? numOfWeeksInMonth() : 1
-    }
-    
-    internal lazy var dateFormatterShowDays: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d"
-        return dateFormatter
-    }()
-    
-    private lazy var dateFormatterShowMonth: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = calendar
-        dateFormatter.locale = Locale.autoupdatingCurrent
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMMM y")
-        return dateFormatter
-    }()
     
 }

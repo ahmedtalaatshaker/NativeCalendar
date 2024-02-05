@@ -71,7 +71,6 @@ extension CalendarView {
         }
     }
     
-    
     func numOfWeeksInMonth() -> Int{
         days.count / 7
     }
