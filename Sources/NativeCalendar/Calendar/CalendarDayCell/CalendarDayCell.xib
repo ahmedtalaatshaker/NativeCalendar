@@ -57,16 +57,36 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhL-fH-XGE">
+                    <rect key="frame" x="0.0" y="10" width="10" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="b01-jH-1rU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIR-IU-IPW">
+                    <rect key="frame" x="49" y="10" width="11" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="M9w-lF-zAV"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="FhL-fH-XGE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5Ns-F7-fdJ"/>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8XK-No-JYS"/>
+                <constraint firstItem="bBZ-YR-atK" firstAttribute="leading" secondItem="FhL-fH-XGE" secondAttribute="trailing" id="EkH-eY-h0j"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I4C-tt-5cG"/>
+                <constraint firstItem="aIR-IU-IPW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XoE-sH-fKb"/>
+                <constraint firstItem="FhL-fH-XGE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ya8-ac-BDu"/>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCm-TY-hUP"/>
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="leading" constant="-2" id="cjC-c5-jdA"/>
+                <constraint firstItem="aIR-IU-IPW" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="trailing" constant="-1" id="ivO-ld-nvz"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qrP-Aq-1Uh"/>
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uD4-Hg-b1t"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aIR-IU-IPW" secondAttribute="trailing" id="xNp-Vk-Kk6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

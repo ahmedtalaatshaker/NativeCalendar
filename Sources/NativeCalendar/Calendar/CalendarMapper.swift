@@ -35,12 +35,12 @@ public enum dayWeek: Int {
     }
 }
 
-enum Month{
+enum Month {
     case next
     case previous
 }
 
-enum WeekIndex{
+enum WeekIndex {
     case first
     case second
     case third
