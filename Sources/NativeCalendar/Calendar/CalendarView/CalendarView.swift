@@ -147,7 +147,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         }
         self.calendarCollectionView.reloadData()
 
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.2) {
             self.layoutIfNeeded()
             self.setNeedsLayout()
         } completion: { _ in
