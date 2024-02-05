@@ -98,14 +98,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
 
             if userSelectedDate.count == 2 {
                 days = generateDaysInMonth(for: baseDate)
-                for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
-                    days[dayIndex].fromToLabel = "From"
-                }
-                
-                for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[1] {
-                    days[dayIndex].fromToLabel = "To"
-                }
-
+                setFromToLabel(days: &days)
             }
         }
     }
@@ -119,6 +112,16 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
                     days[dayIndex].isSelected = true
                 }
             }
+        }
+    }
+    
+    func setFromToLabel(days: inout [Day]) {
+        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
+            days[dayIndex].fromToLabel = "From"
+        }
+        
+        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[1] {
+            days[dayIndex].fromToLabel = "To"
         }
     }
     

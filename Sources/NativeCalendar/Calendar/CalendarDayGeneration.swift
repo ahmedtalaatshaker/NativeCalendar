@@ -52,7 +52,7 @@ extension CalendarView {
         if remainningDays < 7 {
             days += generateStartOfNextMonth(using: firstDayOfMonth, additionalDays: remainningDays)
         }
-        
+        setFromToLabel(days: &days)
         return days
     }
     
