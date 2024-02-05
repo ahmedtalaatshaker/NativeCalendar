@@ -39,8 +39,8 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         if currentDay.isOffDay { return }
         days = setNotSelected(days: days)
         days[index].isSelected = true
-        let selectedDate = calendar.date(byAdding: .day, value: 1, to: days[index].date)
-        userSelectedDate = selectedDate ?? Date()
+        let selectedDate = days[index].date //calendar.date(byAdding: .day, value: 1, to: days[index].date)
+        userSelectedDate = selectedDate 
         getSelectedDate(userSelectedDate)
         if !days[index].isWithinDisplayedMonth && isMonthView{
             index < 7 ? moveToMonth(month: .previous) :  moveToMonth(month: .next)
