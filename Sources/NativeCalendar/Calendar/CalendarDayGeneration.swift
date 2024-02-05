@@ -104,7 +104,8 @@ extension CalendarView {
             isWithinDisplayedMonth: isWithinDisplayedMonth,
             isHaveEvents: datesWithEvents.contains(date),
             cellIndex: 0,
-            isOffDay: offDates.contains(date)
+            isOffDay: offDates.contains(date), 
+            utc: date.timeIntervalSince1970
         )
     }
     

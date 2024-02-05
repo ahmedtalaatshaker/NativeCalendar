@@ -44,10 +44,20 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         let currentDay = days[index]
         if currentDay.isOffDay { return }
         if days[index].isSelected {
-            days[index].isSelected = false
-            userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
-            getSelectedDate(userSelectedDate)
-
+            if selectionType == .from_to &&
+                userSelectedDate.contains(days[index].utc) {
+                userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
+                days = setNotSelected(days: days)
+                if !userSelectedDate.isEmpty {
+                    for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
+                        days[dayIndex].isSelected = true
+                    }
+                }
+            } else {
+                days[index].isSelected = false
+                userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
+                getSelectedDate(userSelectedDate)
+            }
         } else {
             switch selectionType {
             case .single:
@@ -55,12 +65,12 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
                 days[index].isSelected = true
                 userSelectedDate = [days[index].date.timeIntervalSince1970]
                 getSelectedDate(userSelectedDate)
-
+                
             case .multi:
                 days[index].isSelected = true
                 userSelectedDate.append(days[index].date.timeIntervalSince1970)
                 getSelectedDate(userSelectedDate)
-
+                
                 break
             case .from_to:
                 if userSelectedDate.count < 2 {
@@ -68,7 +78,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
                     userSelectedDate.append(days[index].date.timeIntervalSince1970)
                     getSelectedDate(userSelectedDate)
                 }
-
+                
                 break
             }
         }

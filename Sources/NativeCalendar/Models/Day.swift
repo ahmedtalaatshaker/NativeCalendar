@@ -14,5 +14,6 @@ struct Day {
     let isHaveEvents: Bool
     var cellIndex: Int
     var isOffDay: Bool
+    var utc: TimeInterval
 }
 
