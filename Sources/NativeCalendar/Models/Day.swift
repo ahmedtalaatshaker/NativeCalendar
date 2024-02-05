@@ -15,5 +15,6 @@ struct Day {
     var cellIndex: Int
     var isOffDay: Bool
     var utc: TimeInterval
+    var fromToLabel: String?
 }
 

@@ -28,6 +28,8 @@ extension CalendarView: UICollectionViewDataSource {
         if day.isSelected {
             selectedDateCell = cell
         }
+        guard let labelText = day.fromToLabel else { return cell }
+        cell.setFromTo(text: labelText)
         return cell
     }
 }
@@ -96,6 +98,14 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
 
             if userSelectedDate.count == 2 {
                 days = generateDaysInMonth(for: baseDate)
+                for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
+                    days[dayIndex].fromToLabel = "From"
+                }
+                
+                for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[1] {
+                    days[dayIndex].fromToLabel = "To"
+                }
+
             }
         }
     }

@@ -10,6 +10,7 @@ import UIKit
 class CalendarDayCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var fromToLabel: UILabel!
     @IBOutlet weak var eventIndicator: UIView!
     var day: Day?
     
@@ -45,6 +46,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     }
     
     func setupView(){
+        fromToLabel.isHidden = true
         selectionBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         selectionBackgroundView.clipsToBounds = true
         selectionBackgroundView.layer.cornerRadius = selectionBackgroundView.frame.width / 2
@@ -65,6 +67,11 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.backgroundColor = selectedBGColor
+    }
+    
+    func setFromTo(text: String) {
+        fromToLabel.isHidden = false
+        fromToLabel.text = text
     }
 }
 

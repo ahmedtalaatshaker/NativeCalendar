@@ -51,7 +51,7 @@
                         <constraint firstItem="5w1-tb-QPc" firstAttribute="top" secondItem="Xxf-VY-wH5" secondAttribute="top" id="yLL-WH-LbU"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
                     <rect key="frame" x="10" y="4" width="15.666666666666664" height="5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="6"/>
                     <nil key="textColor"/>
@@ -73,6 +73,7 @@
             <connections>
                 <outlet property="dayLabel" destination="5w1-tb-QPc" id="yU6-FQ-1EO"/>
                 <outlet property="eventIndicator" destination="0TA-1g-a4v" id="cvT-pR-7Vo"/>
+                <outlet property="fromToLabel" destination="mpb-Ql-UkG" id="kak-Sq-nG4"/>
                 <outlet property="selectionBackgroundView" destination="bBZ-YR-atK" id="3SC-Mr-Fwj"/>
             </connections>
             <point key="canvasLocation" x="6" y="0.0"/>

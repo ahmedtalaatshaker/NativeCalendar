@@ -109,7 +109,7 @@ extension CalendarView {
         return days
     }
     
-    private func selectSameDate(date: Date) -> Bool {
+    func selectSameDate(date: Date) -> Bool {
         for selectedDateUTC in userSelectedDate {
             let selectedDate = Date(timeIntervalSince1970: selectedDateUTC)
             if calendar.isDate(date, inSameDayAs: selectedDate) {
