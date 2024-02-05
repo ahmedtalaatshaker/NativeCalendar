@@ -56,8 +56,9 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
             } else {
                 days[index].isSelected = false
                 userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
-                getSelectedDate(userSelectedDate)
             }
+            getSelectedDate(userSelectedDate)
+
         } else {
             switch selectionType {
             case .single:
