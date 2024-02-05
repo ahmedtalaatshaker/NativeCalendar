@@ -52,7 +52,7 @@
                     </constraints>
                 </view>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
-                    <rect key="frame" x="10" y="0.0" width="19" height="8.6666666666666661"/>
+                    <rect key="frame" x="8" y="0.0" width="19" height="8.6666666666666661"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="7"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8XK-No-JYS"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I4C-tt-5cG"/>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCm-TY-hUP"/>
-                <constraint firstItem="mpb-Ql-UkG" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="leading" id="cjC-c5-jdA"/>
+                <constraint firstItem="mpb-Ql-UkG" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="leading" constant="-2" id="cjC-c5-jdA"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qrP-Aq-1Uh"/>
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uD4-Hg-b1t"/>
             </constraints>
