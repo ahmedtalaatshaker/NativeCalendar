@@ -22,7 +22,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     lazy var daysToBeShown: [Day]! = days
     
     var weekIndex = WeekIndex.first
-    var userSelectedDate = Date()
+    var userSelectedDate = TimeInterval()
     
     // ---------------------- TODO: pass from outside -------------------
     var calendar: Calendar!
@@ -31,7 +31,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var endDate: Date!
     var startDate: Date!
     var firstWeekDay: dayWeek!
-    var getSelectedDate: ((Date) -> Void)!
+    var getSelectedDate: ((TimeInterval) -> Void)!
     
     // Cell Colors
     var defaultLabelColor: UIColor = .label
@@ -45,7 +45,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
                         endDate: Date,
                         startDate: Date,
                         firstWeekDay: dayWeek, 
-                        getSelectedDate: @escaping ((Date) -> Void)) {
+                        getSelectedDate: @escaping ((TimeInterval) -> Void)) {
         self.calendar = calendar
         self.offDates = offDates
         self.datesWithEvents = datesWithEvents
