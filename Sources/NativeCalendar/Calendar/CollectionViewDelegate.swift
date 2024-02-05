@@ -44,13 +44,14 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         let currentDay = days[index]
         if currentDay.isOffDay { return }
         if days[index].isSelected {
-            if selectionType == .from_to &&
-                userSelectedDate.contains(days[index].utc) {
-                userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
-                days = setNotSelected(days: days)
-                if !userSelectedDate.isEmpty {
-                    for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
-                        days[dayIndex].isSelected = true
+            if selectionType == .from_to {
+                if userSelectedDate.contains(days[index].utc) {
+                    userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
+                    days = setNotSelected(days: days)
+                    if !userSelectedDate.isEmpty {
+                        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
+                            days[dayIndex].isSelected = true
+                        }
                     }
                 }
             } else {
@@ -58,7 +59,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
                 userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
             }
             getSelectedDate(userSelectedDate)
-
+            
         } else {
             switch selectionType {
             case .single:
