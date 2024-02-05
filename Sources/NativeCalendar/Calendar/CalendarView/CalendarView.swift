@@ -30,6 +30,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var endDate: Date!
     var startDate: Date!
     var firstWeekDay: dayWeek!
+    var getSelectedDate: ((Date) -> Void)!
     
     public func setData(calendar: Calendar,
                         offDates: [Date],
@@ -37,13 +38,14 @@ public class CalendarView: UIView, UICollectionViewDelegate {
                         endDate: Date,
                         startDate: Date,
                         firstWeekDay: dayWeek, 
-                        getSelectedDate: ((Date) -> Void)) {
+                        getSelectedDate: @escaping ((Date) -> Void)) {
         self.calendar = calendar
         self.offDates = offDates
         self.datesWithEvents = datesWithEvents
         self.endDate = endDate
         self.startDate = startDate
         self.firstWeekDay = firstWeekDay
+        self.getSelectedDate = getSelectedDate
         
         if startDate > baseDate {
             baseDate = startDate
@@ -53,10 +55,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
             dayLabel.text = firstWeekDay.weekDays[dayLabel.tag]
         }
     }
-    
-    // TODO: selected date to retreive
-    public var getSelectedDate: ((Date) -> Void)!
-    
     // -----------------------------------
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
