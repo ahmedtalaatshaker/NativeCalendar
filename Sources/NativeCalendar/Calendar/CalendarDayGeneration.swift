@@ -119,7 +119,7 @@ extension CalendarView {
         return false
     }
     
-    private func selectDateBetweenFrom_To(date: Date) -> Bool {
+    func selectDateBetweenFrom_To(date: Date) -> Bool {
         if selectionType == .from_to &&
             userSelectedDate.count == 2 {
             let selectedDateFrom = Date(timeIntervalSince1970: userSelectedDate[0])

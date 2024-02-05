@@ -17,7 +17,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     @IBOutlet var daysLabel: [UILabel]!
     
     internal var selectedDate = Date()
-    internal var selectedDateCell: CalendarDayCell!
     internal lazy var days = generateDaysInMonth(for: baseDate)
     lazy var daysToBeShown: [Day]! = days
     

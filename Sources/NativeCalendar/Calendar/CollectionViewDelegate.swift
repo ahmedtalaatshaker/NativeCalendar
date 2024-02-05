@@ -25,9 +25,7 @@ extension CalendarView: UICollectionViewDataSource {
         cell.setupView()
         day.cellIndex = indexPath.row
         cell.setDay(day: day, isMonthView: isMonthView)
-        if day.isSelected {
-            selectedDateCell = cell
-        }
+        if selectDateBetweenFrom_To(date: day.date) { cell.showLeft_rightBGs() }
         guard let labelText = day.fromToLabel else { return cell }
         cell.setFromTo(text: labelText)
         return cell

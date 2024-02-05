@@ -12,6 +12,9 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
     @IBOutlet weak var eventIndicator: UIView!
+    @IBOutlet weak var leftBG: UIView!
+    @IBOutlet weak var rightBG: UIView!
+
     var day: Day?
     
     var defaultLabelColor: UIColor!
@@ -56,6 +59,8 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         dayLabel.textColor = defaultLabelColor
         eventIndicator.layer.cornerRadius = eventIndicator.frame.width / 2
+        leftBG.isHidden = true
+        rightBG.isHidden = true
     }
     
     func setColors(defaultLabelColor: UIColor,
@@ -67,12 +72,20 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.backgroundColor = selectedBGColor
+        leftBG.backgroundColor = selectedBGColor
+        rightBG.backgroundColor = selectedBGColor
     }
     
     func setFromTo(text: String) {
         fromToLabel.isHidden = false
         fromToLabel.text = text
     }
+    
+    func showLeft_rightBGs() {
+        leftBG.isHidden = false
+        rightBG.isHidden = false
+    }
+
 }
 
 // MARK: - Appearance

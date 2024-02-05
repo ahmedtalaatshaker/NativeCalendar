@@ -65,7 +65,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIR-IU-IPW">
-                    <rect key="frame" x="49" y="10" width="11" height="40"/>
+                    <rect key="frame" x="50" y="10" width="10" height="40"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="M9w-lF-zAV"/>
@@ -83,7 +83,7 @@
                 <constraint firstItem="FhL-fH-XGE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ya8-ac-BDu"/>
                 <constraint firstItem="bBZ-YR-atK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCm-TY-hUP"/>
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="leading" constant="-2" id="cjC-c5-jdA"/>
-                <constraint firstItem="aIR-IU-IPW" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="trailing" constant="-1" id="ivO-ld-nvz"/>
+                <constraint firstItem="aIR-IU-IPW" firstAttribute="leading" secondItem="bBZ-YR-atK" secondAttribute="trailing" id="ivO-ld-nvz"/>
                 <constraint firstItem="Xxf-VY-wH5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qrP-Aq-1Uh"/>
                 <constraint firstItem="mpb-Ql-UkG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uD4-Hg-b1t"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aIR-IU-IPW" secondAttribute="trailing" id="xNp-Vk-Kk6"/>
@@ -93,6 +93,8 @@
                 <outlet property="dayLabel" destination="5w1-tb-QPc" id="yU6-FQ-1EO"/>
                 <outlet property="eventIndicator" destination="0TA-1g-a4v" id="cvT-pR-7Vo"/>
                 <outlet property="fromToLabel" destination="mpb-Ql-UkG" id="kak-Sq-nG4"/>
+                <outlet property="leftBG" destination="FhL-fH-XGE" id="bIx-FE-cGD"/>
+                <outlet property="rightBG" destination="aIR-IU-IPW" id="qkj-HY-x4m"/>
                 <outlet property="selectionBackgroundView" destination="bBZ-YR-atK" id="3SC-Mr-Fwj"/>
             </connections>
             <point key="canvasLocation" x="6" y="0.0"/>
