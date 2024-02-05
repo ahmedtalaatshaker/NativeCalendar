@@ -36,6 +36,10 @@ extension CalendarView: UICollectionViewDataSource {
 @available(iOS 13.0, *)
 extension CalendarView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        defer {
+            getSelectedDate(userSelectedDate)
+
+        }
         var index = indexPath.row
         if !isMonthView {
             let currentRange = Array(weekIndex.range)
@@ -58,7 +62,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
                 days[index].isSelected = false
                 userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
             }
-            getSelectedDate(userSelectedDate)
+//            getSelectedDate(userSelectedDate)
             
         } else {
             switch selectionType {
@@ -66,19 +70,22 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
                 days = setNotSelected(days: days)
                 days[index].isSelected = true
                 userSelectedDate = [days[index].date.timeIntervalSince1970]
-                getSelectedDate(userSelectedDate)
+//                getSelectedDate(userSelectedDate)
                 
             case .multi:
                 days[index].isSelected = true
                 userSelectedDate.append(days[index].date.timeIntervalSince1970)
-                getSelectedDate(userSelectedDate)
+//                getSelectedDate(userSelectedDate)
                 
                 break
             case .from_to:
                 if userSelectedDate.count < 2 {
                     days[index].isSelected = true
                     userSelectedDate.append(days[index].date.timeIntervalSince1970)
-                    getSelectedDate(userSelectedDate)
+//                    getSelectedDate(userSelectedDate)
+                    if userSelectedDate.count == 2 {
+                        days = generateDaysInMonth(for: baseDate)
+                    }
                 }
                 
                 break
