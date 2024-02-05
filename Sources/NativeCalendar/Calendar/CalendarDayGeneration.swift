@@ -78,10 +78,16 @@ extension CalendarView {
             value: dayOffset,
             to: baseDate) ?? baseDate
         
+        var isSelected = false
+        for selectedDate in userSelectedDate where calendar.isDate(date, inSameDayAs: Date(timeIntervalSince1970: selectedDate)){
+            isSelected = true
+            break
+        }
+
         return Day(
             date: date,
             number: dateFormatterShowDays.string(from: date),
-            isSelected: calendar.isDate(date, inSameDayAs: Date(timeIntervalSince1970: userSelectedDate)),
+            isSelected: isSelected,
             isWithinDisplayedMonth: isWithinDisplayedMonth,
             isHaveEvents: datesWithEvents.contains(date),
             cellIndex: 0,

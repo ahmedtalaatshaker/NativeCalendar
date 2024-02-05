@@ -6,6 +6,12 @@
 //
 
 import Foundation
+public enum SelectionType {
+    case single
+    case multi
+    case from_to
+}
+
 public enum dayWeek: Int {
     case sunday = 1, monday, tuesday, wednesday, thursday, friday, saturday
     
