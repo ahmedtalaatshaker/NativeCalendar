@@ -21,7 +21,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     var selectedLabelColor: UIColor!
     var offDaysColor: UIColor!
     var selectedBGColor: UIColor!
-
+    
     private lazy var accessibilityDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
@@ -77,10 +77,17 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     }
     
     func setFromTo(text: String) {
+        let cornerRadius = selectionBackgroundView.frame.width / 2
         fromToLabel.isHidden = false
         fromToLabel.text = text
-        rightBG.isHidden = text == From_to.to.rawValue
-        leftBG.isHidden = text == From_to.from.rawValue
+        if text == From_to.to.rawValue {
+            leftBG.isHidden = false
+            selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
+        } else {
+            rightBG.isHidden = false
+            selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+        }
+
     }
     
     func showLeft_rightBGs() {

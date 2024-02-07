@@ -23,4 +23,11 @@ extension UIView {
         view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         return view
     }
+    
+    func roundedCorner(cornerRadii: CGFloat, corners: CACornerMask) {
+        layer.cornerRadius = cornerRadii
+        layer.masksToBounds = true
+        self.layer.maskedCorners = corners
+    }
+
 }
