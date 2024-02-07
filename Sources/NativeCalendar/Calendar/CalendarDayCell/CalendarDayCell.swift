@@ -91,11 +91,13 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     }
     
     func showLeft_rightBGs() {
+        let cornerRadius = selectionBackgroundView.frame.width / 2
+
         leftBG.isHidden = false
         rightBG.isHidden = false
         
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
-        selectionBackgroundView.applyDropShadow(radius: 3)
+        selectionBackgroundView.applyDropShadow(radius: cornerRadius)
 
     }
 
@@ -105,7 +107,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         leftBG.isHidden = true
         rightBG.isHidden = true
         selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
-        selectionBackgroundView.applyDropShadow(radius: 3)
+        selectionBackgroundView.applyDropShadow(radius: cornerRadius)
 
     }
 }
