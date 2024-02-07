@@ -74,6 +74,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         selectionBackgroundView.backgroundColor = selectedBGColor
         leftBG.backgroundColor = selectedBGColor
         rightBG.backgroundColor = selectedBGColor
+        resetView()
     }
     
     func setFromTo(text: String) {
@@ -97,6 +98,11 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         selectionBackgroundView.layer.cornerRadius = 0
     }
 
+    private func resetView() {
+        leftBG.isHidden = true
+        rightBG.isHidden = true
+        selectionBackgroundView.layer.cornerRadius = selectionBackgroundView.frame.width / 2
+    }
 }
 
 // MARK: - Appearance
