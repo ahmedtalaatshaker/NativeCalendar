@@ -97,8 +97,6 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         rightBG.isHidden = false
         
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
-        self.applyDropShadow(radius: cornerRadius)
-
     }
 
     private func resetView() {
@@ -107,8 +105,6 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         leftBG.isHidden = true
         rightBG.isHidden = true
         selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
-        self.applyDropShadow(radius: cornerRadius)
-
     }
 }
 
