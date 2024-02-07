@@ -29,5 +29,16 @@ extension UIView {
         layer.masksToBounds = true
         self.layer.maskedCorners = corners
     }
-
+    
+    func roundedBorders(
+        radius: CGFloat,
+        borderColor: UIColor = UIColor.clear,
+        borderWidth: CGFloat = 0
+    ) {
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderWidth
+        self.clipsToBounds = true
+    }
 }

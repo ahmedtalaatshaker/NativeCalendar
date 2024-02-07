@@ -52,8 +52,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         fromToLabel.isHidden = true
         selectionBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         selectionBackgroundView.clipsToBounds = true
-        selectionBackgroundView.layer.cornerRadius = selectionBackgroundView.frame.width / 2
-        
+        selectionBackgroundView.roundedBorders(radius: selectionBackgroundView.frame.width / 2)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -95,13 +94,13 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         leftBG.isHidden = false
         rightBG.isHidden = false
         
-        selectionBackgroundView.layer.cornerRadius = 0
+        selectionBackgroundView.roundedBorders(radius: 0)
     }
 
     private func resetView() {
         leftBG.isHidden = true
         rightBG.isHidden = true
-        selectionBackgroundView.layer.cornerRadius = selectionBackgroundView.frame.width / 2
+        selectionBackgroundView.roundedBorders(radius: selectionBackgroundView.frame.width / 2)
     }
 }
 
