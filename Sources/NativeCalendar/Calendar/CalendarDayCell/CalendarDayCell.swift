@@ -71,7 +71,10 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
 //        selectionBackgroundView.backgroundColor = selectedBGColor
-        setGradientBackground()
+        setGradientBackground(forView: selectionBackgroundView)
+        setGradientBackground(forView: leftBG)
+        setGradientBackground(forView: rightBG)
+
 //        leftBG.backgroundColor = selectedBGColor
 //        rightBG.backgroundColor = selectedBGColor
         resetView()
@@ -106,7 +109,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
     
-    func setGradientBackground() {
+    func setGradientBackground(forView: UIView) {
         let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
                     
@@ -114,14 +117,8 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
         
-        gradientLayer.frame = self.selectionBackgroundView.bounds
-        self.selectionBackgroundView.layer.insertSublayer(gradientLayer, at:0)
-        
-        gradientLayer.frame = self.rightBG.bounds
-        self.rightBG.layer.insertSublayer(gradientLayer, at:0)
-        
-        gradientLayer.frame = self.leftBG.bounds
-        self.leftBG.layer.insertSublayer(gradientLayer, at:0)
+        gradientLayer.frame = forView.bounds
+        forView.layer.insertSublayer(gradientLayer, at:0)
     }
 
 }
