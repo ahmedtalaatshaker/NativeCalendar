@@ -94,13 +94,17 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         leftBG.isHidden = false
         rightBG.isHidden = false
         
-        selectionBackgroundView.roundedBorders(radius: 0)
+        selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 
     private func resetView() {
+        let cornerRadius = selectionBackgroundView.frame.width / 2
+
         leftBG.isHidden = true
         rightBG.isHidden = true
-        selectionBackgroundView.roundedBorders(radius: selectionBackgroundView.frame.width / 2)
+        selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+
+//        selectionBackgroundView.roundedBorders(radius: selectionBackgroundView.frame.width / 2)
     }
 }
 
