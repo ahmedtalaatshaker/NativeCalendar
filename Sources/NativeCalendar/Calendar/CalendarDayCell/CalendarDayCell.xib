@@ -51,12 +51,6 @@
                         <constraint firstItem="5w1-tb-QPc" firstAttribute="top" secondItem="Xxf-VY-wH5" secondAttribute="top" id="yLL-WH-LbU"/>
                     </constraints>
                 </view>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
-                    <rect key="frame" x="8" y="0.0" width="19" height="8.6666666666666661"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="7"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhL-fH-XGE">
                     <rect key="frame" x="0.0" y="10" width="10" height="40"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +65,12 @@
                         <constraint firstAttribute="height" constant="40" id="M9w-lF-zAV"/>
                     </constraints>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpb-Ql-UkG">
+                    <rect key="frame" x="8" y="0.0" width="19" height="8.6666666666666661"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="7"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

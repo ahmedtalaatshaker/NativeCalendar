@@ -5,7 +5,7 @@
 //  Created by Ahmed Talaat on 04/02/2024.
 //
 
-import Foundation
+import UIKit
 public struct Helpers {
     public static var shared = Helpers()
     
@@ -21,5 +21,14 @@ public struct Helpers {
             dates.append(dateFormatter.date(from: $0) ?? Date())
         }
         return dates
+    }
+    
+    func setGradientBackground(forView: UIView, colors: [CGColor]) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.locations = [0.0, 1.0]
+        
+        gradientLayer.frame = forView.bounds
+        forView.layer.insertSublayer(gradientLayer, at:0)
     }
 }

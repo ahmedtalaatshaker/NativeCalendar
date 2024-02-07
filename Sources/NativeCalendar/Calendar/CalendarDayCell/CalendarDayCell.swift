@@ -70,9 +70,9 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
-        setGradientBackground(forView: selectionBackgroundView, colors: selectedBGColor)
-        setGradientBackground(forView: leftBG, colors: selectedBGColor)
-        setGradientBackground(forView: rightBG, colors: selectedBGColor)
+        Helpers.shared.setGradientBackground(forView: selectionBackgroundView, colors: selectedBGColor)
+        Helpers.shared.setGradientBackground(forView: leftBG, colors: selectedBGColor)
+        Helpers.shared.setGradientBackground(forView: rightBG, colors: selectedBGColor)
         resetView()
     }
     
@@ -104,16 +104,6 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         rightBG.isHidden = true
         selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
-    
-    func setGradientBackground(forView: UIView, colors: [CGColor]) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = colors
-        gradientLayer.locations = [0.0, 1.0]
-        
-        gradientLayer.frame = forView.bounds
-        forView.layer.insertSublayer(gradientLayer, at:0)
-    }
-
 }
 
 // MARK: - Appearance
