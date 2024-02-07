@@ -72,8 +72,8 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         self.selectedBGColor = selectedBGColor
 //        selectionBackgroundView.backgroundColor = selectedBGColor
         setGradientBackground()
-        leftBG.backgroundColor = selectedBGColor
-        rightBG.backgroundColor = selectedBGColor
+//        leftBG.backgroundColor = selectedBGColor
+//        rightBG.backgroundColor = selectedBGColor
         resetView()
     }
     
@@ -116,6 +116,8 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         gradientLayer.frame = self.selectionBackgroundView.bounds
                 
         self.selectionBackgroundView.layer.insertSublayer(gradientLayer, at:0)
+        self.rightBG.layer.insertSublayer(gradientLayer, at:0)
+        self.leftBG.layer.insertSublayer(gradientLayer, at:0)
     }
 
 }
