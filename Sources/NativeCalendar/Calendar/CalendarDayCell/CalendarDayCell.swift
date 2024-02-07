@@ -113,10 +113,14 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
+        
         gradientLayer.frame = self.selectionBackgroundView.bounds
-                
         self.selectionBackgroundView.layer.insertSublayer(gradientLayer, at:0)
+        
+        gradientLayer.frame = self.rightBG.bounds
         self.rightBG.layer.insertSublayer(gradientLayer, at:0)
+        
+        gradientLayer.frame = self.leftBG.bounds
         self.leftBG.layer.insertSublayer(gradientLayer, at:0)
     }
 
