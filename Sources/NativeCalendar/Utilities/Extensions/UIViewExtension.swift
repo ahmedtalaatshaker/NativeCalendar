@@ -41,4 +41,19 @@ extension UIView {
         layer.borderWidth = borderWidth
         self.clipsToBounds = true
     }
+    
+    func applyDropShadow(
+        radius: CGFloat,
+        opacity: Float = 0.3,
+        color: UIColor = .black.withAlphaComponent(0.8),
+        shadowOffset: CGSize = CGSize(width: -1, height: 1)
+    ) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = shadowOffset
+        layer.shadowRadius = radius
+        layer.shouldRasterize = true
+        layer.rasterizationScale = true ? UIScreen.main.scale : 1
+    }
 }

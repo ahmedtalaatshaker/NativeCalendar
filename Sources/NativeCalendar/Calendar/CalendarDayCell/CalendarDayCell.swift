@@ -53,6 +53,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         selectionBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         selectionBackgroundView.clipsToBounds = true
         selectionBackgroundView.roundedBorders(radius: selectionBackgroundView.frame.width / 2)
+        selectionBackgroundView.applyDropShadow(radius: 3)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
