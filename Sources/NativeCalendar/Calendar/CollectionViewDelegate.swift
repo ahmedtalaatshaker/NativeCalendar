@@ -122,9 +122,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[1] {
             days[dayIndex].fromToLabel = From_to.to.rawValue
         }
-    }
-    
-    
+    }    
 }
 
 enum From_to: String {

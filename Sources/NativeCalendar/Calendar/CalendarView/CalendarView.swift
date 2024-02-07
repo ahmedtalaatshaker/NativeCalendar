@@ -71,7 +71,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var defaultLabelColor: UIColor = .label
     var selectedLabelColor: UIColor = .white
     var offDaysColor: UIColor = .secondaryLabel
-    var selectedBGColor: UIColor = .red
+    var selectedBGColor: [CGColor] = [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1).cgColor, #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).cgColor, #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1).cgColor]
     
     public func setData(calendar: Calendar,
                         offDates: [Date],
@@ -102,7 +102,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     public func setCellStyle(defaultLabelColor: UIColor,
                              selectedLabelColor: UIColor,
                              offDaysColor: UIColor,
-                             selectedBGColor: UIColor) {
+                             selectedBGColor: [CGColor]) {
         self.defaultLabelColor = defaultLabelColor
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
