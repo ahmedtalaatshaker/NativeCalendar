@@ -56,4 +56,14 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = true ? UIScreen.main.scale : 1
     }
+    
+    func setGradientBackground(colors: [CGColor]) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.locations = [0.0, 1.0]
+        
+        gradientLayer.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer, at:0)
+    }
+
 }

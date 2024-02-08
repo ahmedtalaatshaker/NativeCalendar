@@ -70,9 +70,9 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
-        Helpers.shared.setGradientBackground(forView: selectionBackgroundView, colors: selectedBGColor)
-        Helpers.shared.setGradientBackground(forView: leftBG, colors: selectedBGColor)
-        Helpers.shared.setGradientBackground(forView: rightBG, colors: selectedBGColor)
+        selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
+        leftBG.setGradientBackground(colors: selectedBGColor)
+        rightBG.setGradientBackground(colors: selectedBGColor)
         resetView()
     }
     
@@ -91,8 +91,6 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     }
     
     func showLeft_rightBGs() {
-        let cornerRadius = selectionBackgroundView.frame.width / 2
-
         leftBG.isHidden = false
         rightBG.isHidden = false
         
