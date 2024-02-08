@@ -114,7 +114,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func setFromToLabel(days: inout [Day]) {
+    func setFromToLabel(days: inout [Day<Codable>]) {
         if userSelectedDate.count != 2 { return }
         for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0].dateUTC {
             days[dayIndex].fromToLabel = From_to.from.rawValue

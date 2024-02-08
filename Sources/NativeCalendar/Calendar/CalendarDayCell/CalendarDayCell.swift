@@ -15,7 +15,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var leftBG: UIView!
     @IBOutlet weak var rightBG: UIView!
 
-    var day: Day?
+    var day: Day<Codable>?
     
     var defaultLabelColor: UIColor!
     var selectedLabelColor: UIColor!
@@ -39,7 +39,7 @@ class CalendarDayCell: UICollectionViewCell, ReusableView {
         super.prepareForReuse()
     }
 
-    func setDay(day: Day?, isMonthView: Bool){
+    func setDay(day: Day<Codable>?, isMonthView: Bool){
         guard let day = day else { return }
         self.day = day
         dayLabel.text = day.number

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Day {
+struct Day<T> {
     let date: Date
     let number: String
     var isSelected: Bool
@@ -16,6 +16,6 @@ struct Day {
     var isOffDay: Bool
     var utc: TimeInterval
     var fromToLabel: String?
-    var events: [Dictionary<String, Any>]?
+    var events: [T]?
 }
 

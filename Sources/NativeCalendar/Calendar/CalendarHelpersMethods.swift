@@ -75,7 +75,7 @@ extension CalendarView {
         days.count / 7
     }
     
-    func setNotSelected(days: [Day]) -> [Day]{
+    func setNotSelected(days: [Day<Codable>]) -> [Day<Codable>]{
         return days.map { day in
             var _day = day
             _day.isSelected = false

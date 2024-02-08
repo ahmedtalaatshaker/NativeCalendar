@@ -33,7 +33,7 @@ extension CalendarView {
         case metadataGeneration
     }
     
-    func generateDaysInMonth(for baseDate: Date) -> [Day] {
+    func generateDaysInMonth(for baseDate: Date) -> [Day<Codable>] {
         guard let metadata = try? monthMetadata(for: baseDate) else {
             fatalError("An error occurred when generating the metadata for \(baseDate)")
         }
@@ -44,7 +44,7 @@ extension CalendarView {
         
         let daysToAdd = calculateUpper_LowerDates(offsetInInitialRow: offsetInInitialRow)
                 
-        var days: [Day] = prepareDateData(numberOfDaysInMonth: numberOfDaysInMonth, daysToAdd: daysToAdd, firstDayOfMonth: firstDayOfMonth)
+        var days: [Day<Codable>] = prepareDateData(numberOfDaysInMonth: numberOfDaysInMonth, daysToAdd: daysToAdd, firstDayOfMonth: firstDayOfMonth)
         
         let daysInLastWeek = days.count % 7
         let remainningDays = 7 - daysInLastWeek
@@ -66,7 +66,7 @@ extension CalendarView {
         }
     }
     
-    private func prepareDateData(numberOfDaysInMonth: Int, daysToAdd: Int, firstDayOfMonth: Date) -> [Day] {
+    private func prepareDateData(numberOfDaysInMonth: Int, daysToAdd: Int, firstDayOfMonth: Date) -> [Day<Codable>] {
         return (1..<(numberOfDaysInMonth + daysToAdd))
             .map { day in
                 let isWithinDisplayedMonth = day >= daysToAdd
@@ -79,7 +79,7 @@ extension CalendarView {
             }
     }
     
-    func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -> Day {
+    func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -> Day<Codable> {
         let date = calendar.date(
             byAdding: .day,
             value: dayOffset,
@@ -100,7 +100,7 @@ extension CalendarView {
         )
     }
     
-    func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date, additionalDays: Int) -> [Day] {
+    func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date, additionalDays: Int) -> [Day<Codable>] {
         
         guard let lastDayInMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: firstDayOfDisplayedMonth) else { return [] }
         
