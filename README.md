@@ -46,11 +46,10 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
     Called "CalendarData<Codable>" it will take a date and a list of codable events
     any codable will work with it
 
-              <p align="center">
+    <p align="center">
       <a href="https://drive.google.com/uc?export=view&id=1OfuwDta5T5q-QtlVV1DampbHDmkFwasE"><img src="https://drive.google.com/uc?export=view&id=1OfuwDta5T5q-QtlVV1DampbHDmkFwasE" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
             <a href="https://drive.google.com/uc?export=view&id=13DFjYptcATw8wHQtJ8GjHnqQx0JIzwWT"><img src="https://drive.google.com/uc?export=view&id=13DFjYptcATw8wHQtJ8GjHnqQx0JIzwWT" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
-
 
       <a href="https://drive.google.com/uc?export=view&id=1twQcOOJR4N8dXUrRIzQJ-Hi2hBoOTLhb"><img src="https://drive.google.com/uc?export=view&id=1twQcOOJR4N8dXUrRIzQJ-Hi2hBoOTLhb" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
