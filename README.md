@@ -5,4 +5,6 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 
 ## Usage
 add UIView to Storyboard and set the class as the following
-<iframe src="https://drive.google.com/file/d/1A8-FTyBDMHfMQ29K-jit8TkZcmC2Biak/preview" width="640" height="480" allow="autoplay"></iframe>
+<p align="center">
+      <img src="https://drive.google.com/file/d/1A8-FTyBDMHfMQ29K-jit8TkZcmC2Biak/view" height="450">
+</p>
