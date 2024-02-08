@@ -99,3 +99,13 @@ enum WeekIndex {
         }
     }
 }
+
+public struct CalendarData {
+    var date: Date!
+    var events: [Dictionary<String, Any>]?
+}
+
+public struct UserSelection {
+    var dateUTC: TimeInterval!
+    var events: [Dictionary<String, Any>]?
+}

@@ -16,5 +16,6 @@ struct Day {
     var isOffDay: Bool
     var utc: TimeInterval
     var fromToLabel: String?
+    var events: [Dictionary<String, Any>]?
 }
 

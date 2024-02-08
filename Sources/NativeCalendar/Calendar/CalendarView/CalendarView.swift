@@ -21,7 +21,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     lazy var daysToBeShown: [Day]! = days
     
     var weekIndex = WeekIndex.first
-    var userSelectedDate = [TimeInterval]()
+    var userSelectedDate = [UserSelection]()
     
     internal var isMonthView: Bool = true {
         didSet {
@@ -61,11 +61,11 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     // ---------------------- MARK: pass from outside -------------------
     var calendar: Calendar!
     var offDates: [Date]!
-    var datesWithEvents: [Date]!
+    var datesWithEvents: [CalendarData]!
     var endDate: Date!
     var startDate: Date!
     var firstWeekDay: dayWeek!
-    var getSelectedDate: (([TimeInterval]) -> Void)!
+    var getSelectedDate: (([UserSelection]) -> Void)!
     var selectionType: SelectionType = .single
     // Cell Colors
     var defaultLabelColor: UIColor = .label
@@ -75,12 +75,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     public func setData(calendar: Calendar,
                         offDates: [Date],
-                        datesWithEvents: [Date],
+                        datesWithEvents: [CalendarData],
                         endDate: Date,
                         startDate: Date,
                         firstWeekDay: dayWeek,
                         selectionType: SelectionType,
-                        getSelectedDate: @escaping (([TimeInterval]) -> Void)) {
+                        getSelectedDate: @escaping (([UserSelection]) -> Void)) {
         self.calendar = calendar
         self.offDates = offDates
         self.datesWithEvents = datesWithEvents

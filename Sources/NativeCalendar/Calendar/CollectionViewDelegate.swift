@@ -52,7 +52,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
                 deselectFromToType(for: index)
             } else {
                 days[index].isSelected = false
-                userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
+                userSelectedDate.removeAll(where: {$0.dateUTC == days[index].date.timeIntervalSince1970})
             }
             
         } else {
@@ -81,19 +81,20 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     private func applySingleSelection(for index: Int) {
         days = setNotSelected(days: days)
         days[index].isSelected = true
-        userSelectedDate = [days[index].date.timeIntervalSince1970]
+        userSelectedDate = [UserSelection(dateUTC: days[index].date.timeIntervalSince1970, events: days[index].events)]
+
     }
     
     private func applyMultiSelection(for index: Int) {
         days[index].isSelected = true
-        userSelectedDate.append(days[index].date.timeIntervalSince1970)
+        userSelectedDate.append(UserSelection(dateUTC: days[index].date.timeIntervalSince1970, events: days[index].events))
     }
 
     private func applyFromToSelection(for index: Int) {
         if userSelectedDate.count < 2 {
             days[index].isSelected = true
-            userSelectedDate.append(days[index].date.timeIntervalSince1970)
-
+            userSelectedDate.append(UserSelection(dateUTC: days[index].date.timeIntervalSince1970, events: days[index].events))
+            
             if userSelectedDate.count == 2 {
                 days = generateDaysInMonth(for: baseDate)
                 setFromToLabel(days: &days)
@@ -102,11 +103,11 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     }
 
     private func deselectFromToType(for index: Int) {
-        if userSelectedDate.contains(days[index].utc) {
-            userSelectedDate.removeAll(where: {$0 == days[index].date.timeIntervalSince1970})
+        if userSelectedDate.contains(where: {$0.dateUTC == days[index].utc}) {
+            userSelectedDate.removeAll(where: {$0.dateUTC == days[index].date.timeIntervalSince1970})
             days = setNotSelected(days: days)
             if !userSelectedDate.isEmpty {
-                for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
+                for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0].dateUTC {
                     days[dayIndex].isSelected = true
                 }
             }
@@ -115,11 +116,11 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     
     func setFromToLabel(days: inout [Day]) {
         if userSelectedDate.count != 2 { return }
-        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0] {
+        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[0].dateUTC {
             days[dayIndex].fromToLabel = From_to.from.rawValue
         }
         
-        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[1] {
+        for dayIndex in 0..<days.count where days[dayIndex].utc == userSelectedDate[1].dateUTC {
             days[dayIndex].fromToLabel = From_to.to.rawValue
         }
     }    

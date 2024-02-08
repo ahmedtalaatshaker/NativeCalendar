@@ -85,17 +85,18 @@ extension CalendarView {
             value: dayOffset,
             to: baseDate) ?? baseDate
         
-        userSelectedDate.sort()
+        userSelectedDate.sort(by: {$0.dateUTC < $1.dateUTC})
         
         return Day(
             date: date,
             number: dateFormatterShowDays.string(from: date),
             isSelected: selectSameDate(date: date) || selectDateBetweenFrom_To(date: date),
             isWithinDisplayedMonth: isWithinDisplayedMonth,
-            isHaveEvents: datesWithEvents.contains(date),
+            isHaveEvents: datesWithEvents.contains(where: {$0.date == date && $0.events != nil}),
             cellIndex: 0,
             isOffDay: offDates.contains(date), 
-            utc: date.timeIntervalSince1970
+            utc: date.timeIntervalSince1970,
+            events: datesWithEvents.first(where: {$0.date == date})?.events
         )
     }
     
@@ -111,7 +112,7 @@ extension CalendarView {
     
     func selectSameDate(date: Date) -> Bool {
         for selectedDateUTC in userSelectedDate {
-            let selectedDate = Date(timeIntervalSince1970: selectedDateUTC)
+            let selectedDate = Date(timeIntervalSince1970: selectedDateUTC.dateUTC)
             if calendar.isDate(date, inSameDayAs: selectedDate) {
                 return true
             }
@@ -122,8 +123,8 @@ extension CalendarView {
     func selectDateBetweenFrom_To(date: Date) -> Bool {
         if selectionType == .from_to &&
             userSelectedDate.count == 2 {
-            let selectedDateFrom = Date(timeIntervalSince1970: userSelectedDate[0])
-            let selectedDateTo = Date(timeIntervalSince1970: userSelectedDate[1])
+            let selectedDateFrom = Date(timeIntervalSince1970: userSelectedDate[0].dateUTC)
+            let selectedDateTo = Date(timeIntervalSince1970: userSelectedDate[1].dateUTC)
             return date < selectedDateTo && date > selectedDateFrom
         }
         return false
