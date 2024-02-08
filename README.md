@@ -67,5 +67,5 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
       <a href="https://drive.google.com/uc?export=view&id=1IKnRUkN9-dkmyHIuX9dL4tPnzN6MxHAv"><img src="https://drive.google.com/uc?export=view&id=1IKnRUkN9-dkmyHIuX9dL4tPnzN6MxHAv" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
 
-            - firstWeekDay: detrimine the start of week to be appeared on the Calendar view with the ability to select any day to be start of the week
+      - firstWeekDay: detrimine the start of week to be appeared on the Calendar view with the ability to select any day to be start of the week
             
