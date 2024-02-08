@@ -67,6 +67,5 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
       <a href="https://drive.google.com/uc?export=view&id=1IKnRUkN9-dkmyHIuX9dL4tPnzN6MxHAv"><img src="https://drive.google.com/uc?export=view&id=1IKnRUkN9-dkmyHIuX9dL4tPnzN6MxHAv" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
 <p align="center">
-      <a href="https://drive.google.com/uc?export=view&id=1ZyWRNxSWctErHM0_tWeq7ZMPE7l3G-ik"><img src="https://drive.google.com/uc?export=view&id=1ZyWRNxSWctErHM0_tWeq7ZMPE7l3G-ik" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+      <a href="https://drive.google.com/uc?export=view&id=1UWW4HSTevfR8sPuAHGC7X-tmzanW_rM3"><img src="https://drive.google.com/uc?export=view&id=1UWW4HSTevfR8sPuAHGC7X-tmzanW_rM3" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
-
