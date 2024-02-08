@@ -103,6 +103,11 @@ enum WeekIndex {
 public struct CalendarData {
     var date: Date!
     var events: [Dictionary<String, Any>]?
+    
+    public init(date: Date!, events: [Dictionary<String, Any>]? = nil) {
+        self.date = date
+        self.events = events
+    }
 }
 
 public struct UserSelection {
