@@ -57,3 +57,15 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
       <a href="https://drive.google.com/uc?export=view&id=1twQcOOJR4N8dXUrRIzQJ-Hi2hBoOTLhb"><img src="https://drive.google.com/uc?export=view&id=1twQcOOJR4N8dXUrRIzQJ-Hi2hBoOTLhb" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
 
+  - Ability to Set Colors for the cell and it also has a default colors with a gradient background for the selected cells
+<p align="center">
+      <a href="https://drive.google.com/uc?export=view&id=19pJQKELu7C4Fy85D3F71r3GtwTwS6nMU"><img src="https://drive.google.com/uc?export=view&id=19pJQKELu7C4Fy85D3F71r3GtwTwS6nMU" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+</p>
+
+  - Finally set all the needed data to make it works
+<p align="center">
+      <a href="https://drive.google.com/uc?export=view&id=1IKnRUkN9-dkmyHIuX9dL4tPnzN6MxHAv"><img src="https://drive.google.com/uc?export=view&id=1IKnRUkN9-dkmyHIuX9dL4tPnzN6MxHAv" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+</p>
+
+            - firstWeekDay: detrimine the start of week to be appeared on the Calendar view with the ability to select any day to be start of the week
+            
