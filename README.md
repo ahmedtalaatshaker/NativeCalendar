@@ -41,10 +41,10 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
       <a href="https://drive.google.com/uc?export=view&id=1Uf-ILxOlUCWQ7uMtJBp-wqwG6BNE5BlX"><img src="https://drive.google.com/uc?export=view&id=1Uf-ILxOlUCWQ7uMtJBp-wqwG6BNE5BlX" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
 
-  - Ability to add Events to be displayed on the calendar as Red Dot
-    it will be the same as Off-Days but with extra variable which will contain the events itself
-    Called "CalendarData<Codable>" it will take a date and a list of codable events
-    any codable will work with it
+  - Ability to add Events to be displayed on the calendar as Red Dot.
+    it will be the same as Off-Days but with extra variable which will contain the events itself,
+    Called "CalendarData<Codable>" it will take a date and a list of codable events,
+    any codable will work with it.
 <p align="center">
       <a href="https://drive.google.com/uc?export=view&id=1OfuwDta5T5q-QtlVV1DampbHDmkFwasE"><img src="https://drive.google.com/uc?export=view&id=1OfuwDta5T5q-QtlVV1DampbHDmkFwasE" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
