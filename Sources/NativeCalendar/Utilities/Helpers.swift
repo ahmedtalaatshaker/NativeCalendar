@@ -26,7 +26,7 @@ public struct Helpers {
     func setGradientBackground(forView: UIView, colors: [CGColor]) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
-        gradientLayer.locations = [0.0, 1.0, 0.5]
+        gradientLayer.locations = [0.0, 1.0]
         
         gradientLayer.frame = forView.bounds
         forView.layer.insertSublayer(gradientLayer, at:0)
