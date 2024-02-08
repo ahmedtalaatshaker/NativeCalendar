@@ -58,6 +58,10 @@ extension UIView {
     }
     
     func setGradientBackground(colors: [CGColor]) {
+        if colors.count == 1 {
+            self.backgroundColor = UIColor(cgColor: colors[0])
+            return
+        }
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
         gradientLayer.locations = [0.0, 1.0]
