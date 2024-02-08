@@ -20,7 +20,7 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 </p>
 
 4 - Finally the Code inside the ViewController itself
-  - create an @IBOutlet for the view
+  - Create an @IBOutlet for the view
  <p align="center">
       <a href="https://drive.google.com/uc?export=view&id=1JrYB08n47JtmPeT5IsHpEuVu89vPcEQD"><img src="https://drive.google.com/uc?export=view&id=1JrYB08n47JtmPeT5IsHpEuVu89vPcEQD" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
@@ -29,5 +29,19 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
  <p align="center">
       <a href="https://drive.google.com/uc?export=view&id=1ACNN1PDXeZwjdhLLPM16jrHIpW7QzNgF"><img src="https://drive.google.com/uc?export=view&id=1ACNN1PDXeZwjdhLLPM16jrHIpW7QzNgF" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
+
+  - Set start and end dates for the Calendar "'value' is to determine the range of available months"
+      <p align="center">
+      <a href="https://drive.google.com/uc?export=view&id=1OC27n9-HvnOhKX9uF9gockpRVyZyLQjX"><img src="https://drive.google.com/uc?export=view&id=1OC27n9-HvnOhKX9uF9gockpRVyZyLQjX" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+</p>
+
+  - Ability to add Off-Days to be disbled from selection
+    you can pass them as List of Dates directly or if you have them as List of Strings you can use on already implmented function just like the following
+          <p align="center">
+      <a href="https://drive.google.com/uc?export=view&id=1Uf-ILxOlUCWQ7uMtJBp-wqwG6BNE5BlX"><img src="https://drive.google.com/uc?export=view&id=1Uf-ILxOlUCWQ7uMtJBp-wqwG6BNE5BlX" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+</p>
+
+
+
 
 
