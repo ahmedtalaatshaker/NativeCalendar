@@ -35,13 +35,23 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
       <a href="https://drive.google.com/uc?export=view&id=1OC27n9-HvnOhKX9uF9gockpRVyZyLQjX"><img src="https://drive.google.com/uc?export=view&id=1OC27n9-HvnOhKX9uF9gockpRVyZyLQjX" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
 
-  - Ability to add Off-Days to be disbled from selection
-    you can pass them as List of Dates directly or if you have them as List of Strings you can use on already implmented function just like the following
+  - Ability to add Off-Days to be disabled from selection
+    you can pass them as List of Dates directly or if you have them as List of Strings you can use on already implemented function just like the following
           <p align="center">
       <a href="https://drive.google.com/uc?export=view&id=1Uf-ILxOlUCWQ7uMtJBp-wqwG6BNE5BlX"><img src="https://drive.google.com/uc?export=view&id=1Uf-ILxOlUCWQ7uMtJBp-wqwG6BNE5BlX" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
 
+  - Ability to add Events to be displayed on the calendar as Red Dot
+    it will be the same as Off-Days but with extra variable which will contain the events itself
+    Called "CalendarData<Codable>" it will take a date and a list of codable events
+    any codable will work with it
+
+              <p align="center">
+      <a href="https://drive.google.com/uc?export=view&id=1OfuwDta5T5q-QtlVV1DampbHDmkFwasE"><img src="https://drive.google.com/uc?export=view&id=1OfuwDta5T5q-QtlVV1DampbHDmkFwasE" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+
+            <a href="https://drive.google.com/uc?export=view&id=13DFjYptcATw8wHQtJ8GjHnqQx0JIzwWT"><img src="https://drive.google.com/uc?export=view&id=13DFjYptcATw8wHQtJ8GjHnqQx0JIzwWT" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
 
+      <a href="https://drive.google.com/uc?export=view&id=1twQcOOJR4N8dXUrRIzQJ-Hi2hBoOTLhb"><img src="https://drive.google.com/uc?export=view&id=1twQcOOJR4N8dXUrRIzQJ-Hi2hBoOTLhb" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
-
+</p>
