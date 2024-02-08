@@ -111,6 +111,6 @@ public struct CalendarData {
 }
 
 public struct UserSelection {
-    var dateUTC: TimeInterval!
-    var events: [Dictionary<String, Any>]?
+    public var dateUTC: TimeInterval!
+    public var events: [Dictionary<String, Any>]?
 }
