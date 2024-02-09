@@ -69,17 +69,3 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 <p align="center">
       <a href="https://drive.google.com/uc?export=view&id=1UWW4HSTevfR8sPuAHGC7X-tmzanW_rM3"><img src="https://drive.google.com/uc?export=view&id=1UWW4HSTevfR8sPuAHGC7X-tmzanW_rM3" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
-
-<!DOCTYPE html>
-<html>
-<body>
-  
-<iframe src="https://drive.google.com/file/d/1msDkdXV8OE8IFgrgZu4-xv2lpqH9Tym5/preview" width="640" height="480" allow="autoplay">
-      
-</iframe>  
-  <!--aloow full screen add tag -->
-  
-<iframe allowfullscreen="allowfullscreen" src="https://drive.google.com/file/d/1msDkdXV8OE8IFgrgZu4-xv2lpqH9Tym5/preview" ></iframe>
-
-</body>
-</html>
