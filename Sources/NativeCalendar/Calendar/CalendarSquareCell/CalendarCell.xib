@@ -32,11 +32,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS2-sT-HVq">
-                    <rect key="frame" x="7.6666666666666679" y="56" width="45" height="2"/>
+                    <rect key="frame" x="7.6666666666666679" y="55" width="45" height="3"/>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="7oo-tz-akZ"/>
-                        <constraint firstAttribute="height" constant="2" id="Lcc-Xq-7O2"/>
+                        <constraint firstAttribute="height" constant="3" id="Lcc-Xq-7O2"/>
                     </constraints>
                 </view>
             </subviews>
@@ -59,7 +59,7 @@
                 <outlet property="dayLabel" destination="RL5-UF-quv" id="A40-fr-VO1"/>
                 <outlet property="eventIndicator" destination="pS2-sT-HVq" id="1hH-SB-fqv"/>
                 <outlet property="fromToLabel" destination="JBR-9P-5mp" id="ate-PZ-Ahq"/>
-                <outlet property="selectionBackgroundـView" destination="WB4-jO-GrO" id="gaW-g2-8Iy"/>
+                <outlet property="selectionBackgroundView" destination="WB4-jO-GrO" id="mcd-YW-cOu"/>
             </connections>
             <point key="canvasLocation" x="4.5801526717557248" y="0.0"/>
         </view>
