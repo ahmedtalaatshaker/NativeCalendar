@@ -30,7 +30,6 @@ extension CalendarView: UICollectionViewDataSource {
         case .none:
             fatalError("cell type error")
         }
-        
     }
     
     func setCell(cell: UICollectionViewCell, day: Day<Codable>) -> UICollectionViewCell{

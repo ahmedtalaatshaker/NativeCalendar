@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarNewCell: UICollectionViewCell {
+class CalendarNewCell: UICollectionViewCell, CommonFunc {
     
     @IBOutlet weak var selectionBackgroundـView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
@@ -21,6 +21,9 @@ class CalendarNewCell: UICollectionViewCell {
     var offDaysColor: UIColor!
     var selectedBGColor: [CGColor]!
     let selectionViewCornerRadius: CGFloat = 4
+    var isMonthView: Bool!
+    var selectionType: SelectionType!
+    var userSelectedDate: [UserSelection<Codable>]!
 
     private lazy var accessibilityDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
