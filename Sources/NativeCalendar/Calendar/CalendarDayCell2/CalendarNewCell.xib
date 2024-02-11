@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WB4-jO-GrO">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                    <rect key="frame" x="5" y="5" width="50" height="50"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBR-9P-5mp">
@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS2-sT-HVq">
-                    <rect key="frame" x="4" y="56" width="52" height="2"/>
+                    <rect key="frame" x="4" y="50" width="52" height="2"/>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="Lcc-Xq-7O2"/>
@@ -45,15 +45,15 @@
                 <constraint firstItem="RL5-UF-quv" firstAttribute="top" secondItem="JBR-9P-5mp" secondAttribute="bottom" constant="2" id="1R8-wq-Af3"/>
                 <constraint firstAttribute="trailing" secondItem="pS2-sT-HVq" secondAttribute="trailing" constant="4" id="5Wm-aF-Esp"/>
                 <constraint firstAttribute="trailing" secondItem="JBR-9P-5mp" secondAttribute="trailing" constant="3" id="66W-1A-MEv"/>
-                <constraint firstItem="WB4-jO-GrO" firstAttribute="leading" secondItem="ADg-LZ-eD7" secondAttribute="leading" id="HH6-yK-P2a"/>
-                <constraint firstAttribute="trailing" secondItem="WB4-jO-GrO" secondAttribute="trailing" id="MJb-Yk-4lx"/>
-                <constraint firstAttribute="bottom" secondItem="WB4-jO-GrO" secondAttribute="bottom" id="Skg-RR-2hu"/>
-                <constraint firstAttribute="bottom" secondItem="pS2-sT-HVq" secondAttribute="bottom" constant="2" id="TVD-RO-Xzy"/>
+                <constraint firstItem="WB4-jO-GrO" firstAttribute="leading" secondItem="ADg-LZ-eD7" secondAttribute="leading" constant="5" id="HH6-yK-P2a"/>
+                <constraint firstAttribute="trailing" secondItem="WB4-jO-GrO" secondAttribute="trailing" constant="5" id="MJb-Yk-4lx"/>
+                <constraint firstAttribute="bottom" secondItem="WB4-jO-GrO" secondAttribute="bottom" constant="5" id="Skg-RR-2hu"/>
+                <constraint firstAttribute="bottom" secondItem="pS2-sT-HVq" secondAttribute="bottom" constant="8" id="TVD-RO-Xzy"/>
                 <constraint firstItem="JBR-9P-5mp" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" constant="1" id="UnR-tt-tON"/>
                 <constraint firstAttribute="trailing" secondItem="RL5-UF-quv" secondAttribute="trailing" constant="3" id="aTk-kl-eE5"/>
                 <constraint firstItem="pS2-sT-HVq" firstAttribute="leading" secondItem="ADg-LZ-eD7" secondAttribute="leading" constant="4" id="bDh-Dk-r2H"/>
                 <constraint firstItem="pS2-sT-HVq" firstAttribute="centerX" secondItem="ADg-LZ-eD7" secondAttribute="centerX" id="sCW-6u-OmM"/>
-                <constraint firstItem="WB4-jO-GrO" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" id="uYF-iv-mrr"/>
+                <constraint firstItem="WB4-jO-GrO" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" constant="5" id="uYF-iv-mrr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
