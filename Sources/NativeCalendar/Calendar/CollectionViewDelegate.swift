@@ -20,9 +20,9 @@ extension CalendarView: UICollectionViewDataSource {
         var cell: CalendarCell = UICollectionViewCell() as! CalendarCell
         switch cellType {
         case .CalendarNewCellType:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarNewCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarNewCell", for: indexPath) as! CalendarNewCell
         case .CalendarDayCellType:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarDayCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCell", for: indexPath) as! CalendarDayCell
         }
         cell.setColors(defaultLabelColor: defaultLabelColor,
                        selectedLabelColor: selectedLabelColor,
