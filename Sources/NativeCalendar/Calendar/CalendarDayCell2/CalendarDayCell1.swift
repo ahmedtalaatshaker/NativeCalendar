@@ -8,7 +8,7 @@
 import UIKit
 
 class CalendarDayCellNew: UICollectionViewCell, ReusableView, CalendarCell {
-    @IBOutlet weak var selectionBackgroundView: UIView!
+    @IBOutlet weak var selectionBackgroundـView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
     @IBOutlet weak var eventIndicator: UIView!
@@ -48,9 +48,9 @@ class CalendarDayCellNew: UICollectionViewCell, ReusableView, CalendarCell {
     
     func setupView(){
         fromToLabel.isHidden = true
-        selectionBackgroundView.translatesAutoresizingMaskIntoConstraints = false
-        selectionBackgroundView.clipsToBounds = true
-        selectionBackgroundView.roundedBorders(radius: selectionBackgroundView.frame.width / 2)
+        selectionBackgroundـView.translatesAutoresizingMaskIntoConstraints = false
+        selectionBackgroundـView.clipsToBounds = true
+        selectionBackgroundـView.roundedBorders(radius: selectionBackgroundـView.frame.width / 2)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -66,29 +66,29 @@ class CalendarDayCellNew: UICollectionViewCell, ReusableView, CalendarCell {
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
-        selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
+        selectionBackgroundـView.setGradientBackground(colors: selectedBGColor)
         resetView()
     }
     
     func setFromTo(text: String) {
-        let cornerRadius = selectionBackgroundView.frame.width / 2
+        let cornerRadius = selectionBackgroundـView.frame.width / 2
         fromToLabel.isHidden = false
         fromToLabel.text = text
         if text == From_to.to.rawValue {
-            selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
+            selectionBackgroundـView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
         } else {
-            selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+            selectionBackgroundـView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         }
 
     }
     
     func showLeft_rightBGs() {
-        selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+        selectionBackgroundـView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 
     func resetView() {
-        let cornerRadius = selectionBackgroundView.frame.width / 2
-        selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+        let cornerRadius = selectionBackgroundـView.frame.width / 2
+        selectionBackgroundـView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 }
 
@@ -110,7 +110,7 @@ extension CalendarDayCellNew {
         accessibilityHint = nil
         dayLabel.textColor = selectedLabelColor
         eventIndicator.backgroundColor = selectedLabelColor
-        selectionBackgroundView.isHidden = false
+        selectionBackgroundـView.isHidden = false
     }
     
     // 4
@@ -118,7 +118,7 @@ extension CalendarDayCellNew {
         accessibilityTraits.remove(.selected)
         accessibilityHint = "Tap to select"
         dayLabel.textColor = isWithinDisplayedMonth ? defaultLabelColor : offDaysColor
-        selectionBackgroundView.isHidden = true
+        selectionBackgroundـView.isHidden = true
         eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
     }
 }

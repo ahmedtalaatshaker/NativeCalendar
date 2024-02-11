@@ -59,7 +59,7 @@
                 <outlet property="dayLabel" destination="Gh0-C5-jv3" id="OsM-UP-G7T"/>
                 <outlet property="eventIndicator" destination="09D-u7-kNq" id="6o6-yg-JoV"/>
                 <outlet property="fromToLabel" destination="7eY-M3-IxH" id="SfA-Nn-C1G"/>
-                <outlet property="selectionBackgroundView" destination="U35-3a-hvs" id="KhT-G3-gNe"/>
+                <outlet property="selectionBackgroundـView" destination="U35-3a-hvs" id="Sq3-pX-eAa"/>
             </connections>
             <point key="canvasLocation" x="4.5801526717557248" y="0.0"/>
         </view>
