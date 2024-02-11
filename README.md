@@ -72,7 +72,7 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 
 ## Attachments:
 ### Single Selection:
-<img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/6b752180-8566-42ef-bfd9-a7ed7878a0c3.gif" style="width: 300px; height: 500px" />
+<img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/6b752180-8566-42ef-bfd9-a7ed7878a0c3.gif" style="width: 300px; height: 400px" />
 
 ### Multi Selection "Friday as start of week":
 ![MultiSelection](https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f9fa4ede-3bc5-457b-8977-8ac66be68c93.gif)
