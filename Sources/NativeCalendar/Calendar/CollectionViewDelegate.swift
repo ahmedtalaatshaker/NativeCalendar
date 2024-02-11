@@ -33,7 +33,7 @@ extension CalendarView: UICollectionViewDataSource {
     }
     
     func setCell(cell: UICollectionViewCell, day: Day<Codable>) -> UICollectionViewCell{
-        guard let cell = cell as? CalendarNewCell else { return UICollectionViewCell() }
+        guard let cell = cell as? CalendarNewCell else { return cell }
         cell.setColors(defaultLabelColor: defaultLabelColor,
                        selectedLabelColor: selectedLabelColor,
                        offDaysColor: offDaysColor,
