@@ -17,7 +17,13 @@ extension CalendarView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var day = daysToBeShown[indexPath.row]
         // TODO: here is the error
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendaCell", for: indexPath) as! CalendarNewCell
+        var cell: CalendarCell = UICollectionViewCell() as! CalendarCell
+        switch cellType {
+        case .CalendarNewCellType:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarNewCell
+        case .CalendarDayCellType:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarDayCell
+        }
         cell.setColors(defaultLabelColor: defaultLabelColor,
                        selectedLabelColor: selectedLabelColor,
                        offDaysColor: offDaysColor,
@@ -26,9 +32,9 @@ extension CalendarView: UICollectionViewDataSource {
         day.cellIndex = indexPath.row
         cell.setDay(day: day, isMonthView: isMonthView)
         if selectDateBetweenFrom_To(date: day.date) { cell.showLeft_rightBGs() }
-        guard let labelText = day.fromToLabel else { return cell }
+        guard let labelText = day.fromToLabel else { return cell as! UICollectionViewCell }
         cell.setFromTo(text: labelText)
-        return cell
+        return cell as! UICollectionViewCell
     }
 }
 

@@ -6,6 +6,33 @@
 //
 
 import UIKit
+extension UICollectionViewCell: ReusableView {
+    
+}
+
+enum CalendarCellType: String {
+    case CalendarNewCellType
+    case CalendarDayCellType
+    
+    func getCalendarCell() -> UICollectionViewCell {
+        switch self {
+        case .CalendarNewCellType:
+            return CalendarNewCell()
+        case .CalendarDayCellType:
+            return CalendarDayCell()
+        }
+    }
+    
+    func getCalendarCellType() -> UICollectionViewCell.Type {
+        switch self {
+        case .CalendarNewCellType:
+            return CalendarNewCell.self
+        case .CalendarDayCellType:
+            return CalendarDayCell.self
+        }
+    }
+
+}
 
 @available(iOS 13.0, *)
 public class CalendarView: UIView, UICollectionViewDelegate {
@@ -72,6 +99,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var selectedLabelColor: UIColor = .white
     var offDaysColor: UIColor = .secondaryLabel
     var selectedBGColor: [CGColor] = [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1).cgColor, #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).cgColor, #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1).cgColor]
+    var cellType = CalendarCellType.CalendarDayCellType
     
     public func setData(calendar: Calendar,
                         offDates: [Date],
@@ -133,7 +161,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     }
     
     private func setupCalendarCollectionView(){
-        calendarCollectionView.registerReusableCell(CalendarNewCell.self)
+        calendarCollectionView.registerReusableCell(cellType.getCalendarCellType())
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false

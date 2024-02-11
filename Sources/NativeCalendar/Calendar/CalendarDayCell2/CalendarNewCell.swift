@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
+class CalendarNewCell: UICollectionViewCell, CalendarCell {
     
     @IBOutlet weak var selectionBackgroundـView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
