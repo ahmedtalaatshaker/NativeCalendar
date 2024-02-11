@@ -72,13 +72,15 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 
 ## Attachments:
 ### Single Selection:
-https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f35eede9-8b59-469f-a7b6-1778ff01ecb4
-### Multi Selection "Friday as start of week":
-https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/24f8e882-a382-4ab0-bb7e-94cb77b5d830
-### From - To Selection "Saturday as start of week":
-https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/d56b087f-f273-45d6-8b01-3d5ec192c30c
-### Square Cell
+![SingleSelection](https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/6b752180-8566-42ef-bfd9-a7ed7878a0c3.gif)
 
+### Multi Selection "Friday as start of week":
+![MultiSelection](https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f9fa4ede-3bc5-457b-8977-8ac66be68c93.gif)
+
+### From - To Selection "Saturday as start of week":
+![FromToSelection](https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/1c51a21c-60fd-46b7-b73e-e7cb06cd8128.gif)
+
+### Square Cell
 ![SquareCell](https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/4c9e4269-9c42-4269-b580-4b95e07a148c.gif)
 
 
