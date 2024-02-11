@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarNewCell: CalendarDayCell {
+class CalendarCell: CalendarDayCell {
     override var selectionViewCornerRadius: CGFloat {
         get {
             return 4

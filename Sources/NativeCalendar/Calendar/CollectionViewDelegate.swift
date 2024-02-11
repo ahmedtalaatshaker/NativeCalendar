@@ -20,7 +20,7 @@ extension CalendarView: UICollectionViewDataSource {
 
         switch cellType {
         case .CalendarNewCellType:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarNewCell", for: indexPath) as? CalendarNewCell else {fatalError("cell type error")}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as? CalendarCell else {fatalError("cell type error")}
             return setCell(cell: cell, day: day)
 
         case .CalendarDayCellType:

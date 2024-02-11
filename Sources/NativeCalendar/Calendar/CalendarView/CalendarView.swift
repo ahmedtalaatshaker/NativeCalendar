@@ -14,23 +14,23 @@ public enum CalendarCellType: String {
     case CalendarNewCellType
     case CalendarDayCellType
     
-    func getCalendarCell() -> UICollectionViewCell {
-        switch self {
-        case .CalendarNewCellType:
-            return CalendarNewCell()
-        case .CalendarDayCellType:
-            return CalendarDayCell()
-        }
-    }
-    
-    func getCalendarCellType() -> UICollectionViewCell.Type {
-        switch self {
-        case .CalendarNewCellType:
-            return CalendarNewCell.self
-        case .CalendarDayCellType:
-            return CalendarDayCell.self
-        }
-    }
+//    func getCalendarCell() -> UICollectionViewCell {
+//        switch self {
+//        case .CalendarNewCellType:
+//            return CalendarNewCell()
+//        case .CalendarDayCellType:
+//            return CalendarDayCell()
+//        }
+//    }
+//
+//    func getCalendarCellType() -> UICollectionViewCell.Type {
+//        switch self {
+//        case .CalendarNewCellType:
+//            return CalendarNewCell.self
+//        case .CalendarDayCellType:
+//            return CalendarDayCell.self
+//        }
+//    }
 
 }
 
@@ -165,7 +165,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     private func setupCalendarCollectionView(){
         calendarCollectionView.registerReusableCell(CalendarDayCell.self)
-        calendarCollectionView.registerReusableCell(CalendarNewCell.self)
+        calendarCollectionView.registerReusableCell(CalendarCell.self)
 
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
