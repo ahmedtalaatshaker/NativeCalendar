@@ -74,11 +74,11 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 <table>
       <lr>
             <li>
-                  Single Selection:
+                  <p>Single Selection: </p>
                   <img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/6b752180-8566-42ef-bfd9-a7ed7878a0c3.gif" style="width: 300px; height: 450px" />
             </li>
             <li>
-                  Multi Selection "Friday as start of week":
+                  <p>Multi Selection "Friday as start of week": </p>
                   <img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f9fa4ede-3bc5-457b-8977-8ac66be68c93.gif" style="width: 250px; height: 450px" />
             </li>
       </lr>
