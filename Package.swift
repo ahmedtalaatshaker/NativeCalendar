@@ -21,7 +21,7 @@ let package = Package(
         .target(
             name: "NativeCalendar",
             dependencies: [],
-            path: "Sources",
+            path: "Sources/NativeCalendar",
             resources: [.process("SupportingFiles")]
         ),
         .testTarget(
