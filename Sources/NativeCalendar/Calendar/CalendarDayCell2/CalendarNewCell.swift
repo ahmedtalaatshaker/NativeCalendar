@@ -8,6 +8,10 @@
 import UIKit
 
 class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
+    func showLeft_rightBGs() {
+        
+    }
+    
     @IBOutlet weak var selectionBackgroundـView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
@@ -19,7 +23,8 @@ class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
     var selectedLabelColor: UIColor!
     var offDaysColor: UIColor!
     var selectedBGColor: [CGColor]!
-    
+    let selectionViewCornerRadius: CGFloat = 4
+
     private lazy var accessibilityDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
@@ -50,12 +55,12 @@ class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
         fromToLabel.isHidden = true
         selectionBackgroundـView.translatesAutoresizingMaskIntoConstraints = false
         selectionBackgroundـView.clipsToBounds = true
-        selectionBackgroundـView.roundedBorders(radius: selectionBackgroundـView.frame.width / 2)
+        selectionBackgroundـView.roundedBorders(radius: selectionViewCornerRadius)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         dayLabel.textColor = defaultLabelColor
-        eventIndicator.layer.cornerRadius = eventIndicator.frame.width / 2
+        eventIndicator.layer.cornerRadius = 2
     }
     
     func setColors(defaultLabelColor: UIColor,
@@ -66,29 +71,22 @@ class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
-        selectionBackgroundـView.setGradientBackground(colors: selectedBGColor)
+        selectionBackgroundـView.layer.borderColor = UIColor.black.cgColor
         resetView()
     }
     
     func setFromTo(text: String) {
-        let cornerRadius = selectionBackgroundـView.frame.width / 2
         fromToLabel.isHidden = false
         fromToLabel.text = text
         if text == From_to.to.rawValue {
-            selectionBackgroundـView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
+            selectionBackgroundـView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
         } else {
-            selectionBackgroundـView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+            selectionBackgroundـView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         }
-
-    }
-    
-    func showLeft_rightBGs() {
-        selectionBackgroundـView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 
     func resetView() {
-        let cornerRadius = selectionBackgroundـView.frame.width / 2
-        selectionBackgroundـView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+        selectionBackgroundـView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 }
 
