@@ -8,9 +8,6 @@
 import UIKit
 
 class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
-    func showLeft_rightBGs() {
-        
-    }
     
     @IBOutlet weak var selectionBackgroundـView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
@@ -88,6 +85,10 @@ class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
 
     func resetView() {
         selectionBackgroundـView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+    }
+    
+    func showLeft_rightBGs() {
+        selectionBackgroundـView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 }
 
