@@ -68,9 +68,10 @@ class CalendarDayCell: UICollectionViewCell {
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         dayLabel.textColor = defaultLabelColor
         eventIndicator.layer.cornerRadius = eventIndicatorCornerRadius
-        if leftBG == nil { return }
-        leftBG.isHidden = true
-        rightBG.isHidden = true
+        if leftBG != nil {
+            leftBG.isHidden = true
+            rightBG.isHidden = true
+        }
     }
     
     func setColors(defaultLabelColor: UIColor,
@@ -102,10 +103,9 @@ class CalendarDayCell: UICollectionViewCell {
             selectionBackgroundView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         }
         if leftBG != nil {
-            leftBG.isHidden = text == From_to.to.rawValue
-            rightBG.isHidden = text != From_to.from.rawValue
+            leftBG.isHidden = text != From_to.to.rawValue
+            rightBG.isHidden = text == From_to.from.rawValue
         }
-        
     }
     
     func showLeft_rightBGs() {
