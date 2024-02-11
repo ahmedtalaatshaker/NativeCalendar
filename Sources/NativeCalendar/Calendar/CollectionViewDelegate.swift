@@ -18,11 +18,19 @@ extension CalendarView: UICollectionViewDataSource {
         var day = daysToBeShown[indexPath.row]
         day.cellIndex = indexPath.row
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarNewCell", for: indexPath) as? CalendarNewCell else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCell", for: indexPath) as? CalendarDayCell else { fatalError("Wrong cell type for section 0. Expected CellTypeOne") }
+        switch cellType {
+        case .CalendarNewCellType:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarNewCell", for: indexPath) as? CalendarNewCell else {fatalError("cell type error")}
             return setCell(cell: cell, day: day)
+
+        case .CalendarDayCellType:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCell", for: indexPath) as? CalendarDayCell else {fatalError("cell type error")}
+            return setCell(cell: cell, day: day)
+            
+        case .none:
+            fatalError("cell type error")
         }
-        return setCell(cell: cell, day: day)
+        
     }
     
     func setCell(cell: UICollectionViewCell, day: Day<Codable>) -> UICollectionViewCell{
