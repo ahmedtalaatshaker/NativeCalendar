@@ -20,8 +20,19 @@ class CalendarDayCell: UICollectionViewCell {
     var selectedLabelColor: UIColor!
     var offDaysColor: UIColor!
     var selectedBGColor: [CGColor]!
-    
-    private lazy var accessibilityDateFormatter: DateFormatter = {
+    var selectionViewCornerRadius: CGFloat {
+        get {
+            selectionBackgroundView.frame.width / 2
+        }
+    }
+
+    var eventIndicatorCornerRadius: CGFloat {
+        get {
+            eventIndicator.frame.width / 2
+        }
+    }
+
+    lazy var accessibilityDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE, MMMM d")
@@ -51,12 +62,13 @@ class CalendarDayCell: UICollectionViewCell {
         fromToLabel.isHidden = true
         selectionBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         selectionBackgroundView.clipsToBounds = true
-        selectionBackgroundView.roundedBorders(radius: selectionBackgroundView.frame.width / 2)
+        selectionBackgroundView.roundedBorders(radius: selectionViewCornerRadius)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         dayLabel.textColor = defaultLabelColor
-        eventIndicator.layer.cornerRadius = eventIndicator.frame.width / 2
+        eventIndicator.layer.cornerRadius = eventIndicatorCornerRadius
+        if leftBG == nil { return }
         leftBG.isHidden = true
         rightBG.isHidden = true
     }
@@ -70,38 +82,47 @@ class CalendarDayCell: UICollectionViewCell {
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
-        leftBG.setGradientBackground(colors: selectedBGColor)
-        rightBG.setGradientBackground(colors: selectedBGColor)
+        if leftBG != nil {
+            leftBG.setGradientBackground(colors: selectedBGColor)
+            rightBG.setGradientBackground(colors: selectedBGColor)
+        } else {
+            eventIndicator.setGradientBackground(colors: [selectedBGColor.first ?? UIColor.black.cgColor, UIColor.cyan.cgColor])
+            selectionBackgroundView.layer.borderColor = UIColor.black.cgColor
+        }
+
         resetView()
     }
     
     func setFromTo(text: String) {
-        let cornerRadius = selectionBackgroundView.frame.width / 2
         fromToLabel.isHidden = false
         fromToLabel.text = text
         if text == From_to.to.rawValue {
-            leftBG.isHidden = false
-            selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
+            selectionBackgroundView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
         } else {
-            rightBG.isHidden = false
-            selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
+            selectionBackgroundView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         }
+        if leftBG != nil {
+            leftBG.isHidden = text != From_to.to.rawValue
+            rightBG.isHidden = text == From_to.from.rawValue
 
+        }
+        
     }
     
     func showLeft_rightBGs() {
-        leftBG.isHidden = false
-        rightBG.isHidden = false
-        
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+        if leftBG != nil {
+            leftBG.isHidden = false
+            rightBG.isHidden = false
+        }
     }
 
     func resetView() {
-        let cornerRadius = selectionBackgroundView.frame.width / 2
-
-        leftBG.isHidden = true
-        rightBG.isHidden = true
-        selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+        selectionBackgroundView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
+        if leftBG != nil {
+            leftBG.isHidden = true
+            rightBG.isHidden = true
+        }
     }
 }
 
