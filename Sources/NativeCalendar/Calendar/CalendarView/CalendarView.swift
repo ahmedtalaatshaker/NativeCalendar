@@ -133,7 +133,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     }
     
     private func setupCalendarCollectionView(){
-        calendarCollectionView.registerReusableCell(CalendarDayCell.self)
+        calendarCollectionView.registerReusableCell(CalendarDayCellNew.self)
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false

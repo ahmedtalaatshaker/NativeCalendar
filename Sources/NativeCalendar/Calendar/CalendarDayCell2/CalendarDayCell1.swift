@@ -6,28 +6,12 @@
 //
 
 import UIKit
-protocol CalendarCell {
-    func setDay(day: Day<Codable>?, isMonthView: Bool)
-    func setupView()
-    func setColors(defaultLabelColor: UIColor,
-                   selectedLabelColor: UIColor,
-                   offDaysColor: UIColor,
-                   selectedBGColor: [CGColor])
-    func setFromTo(text: String)
-    func showLeft_rightBGs()
-    func resetView()
-    func updateSelectionStatus(isMonthView: Bool)
-    func applySelectedStyle()
-    func applyDefaultStyle(isWithinDisplayedMonth: Bool)
-}
 
-class CalendarDayCell: UICollectionViewCell, ReusableView, CalendarCell {
+class CalendarDayCellNew: UICollectionViewCell, ReusableView, CalendarCell {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
     @IBOutlet weak var eventIndicator: UIView!
-    @IBOutlet weak var leftBG: UIView!
-    @IBOutlet weak var rightBG: UIView!
 
     var day: Day<Codable>?
     
@@ -72,8 +56,6 @@ class CalendarDayCell: UICollectionViewCell, ReusableView, CalendarCell {
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         dayLabel.textColor = defaultLabelColor
         eventIndicator.layer.cornerRadius = eventIndicator.frame.width / 2
-        leftBG.isHidden = true
-        rightBG.isHidden = true
     }
     
     func setColors(defaultLabelColor: UIColor,
@@ -85,8 +67,6 @@ class CalendarDayCell: UICollectionViewCell, ReusableView, CalendarCell {
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
-        leftBG.setGradientBackground(colors: selectedBGColor)
-        rightBG.setGradientBackground(colors: selectedBGColor)
         resetView()
     }
     
@@ -95,33 +75,25 @@ class CalendarDayCell: UICollectionViewCell, ReusableView, CalendarCell {
         fromToLabel.isHidden = false
         fromToLabel.text = text
         if text == From_to.to.rawValue {
-            leftBG.isHidden = false
             selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMaxXMaxYCorner, .layerMaxXMinYCorner])
         } else {
-            rightBG.isHidden = false
             selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         }
 
     }
     
     func showLeft_rightBGs() {
-        leftBG.isHidden = false
-        rightBG.isHidden = false
-        
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 
     func resetView() {
         let cornerRadius = selectionBackgroundView.frame.width / 2
-
-        leftBG.isHidden = true
-        rightBG.isHidden = true
         selectionBackgroundView.roundedCorner(cornerRadii: cornerRadius, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
     }
 }
 
 // MARK: - Appearance
-extension CalendarDayCell {
+extension CalendarDayCellNew {
     // 1
     func updateSelectionStatus(isMonthView: Bool) {
         guard let day = day else { return }
