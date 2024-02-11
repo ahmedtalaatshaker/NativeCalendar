@@ -53,6 +53,7 @@ class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
         selectionBackgroundـView.translatesAutoresizingMaskIntoConstraints = false
         selectionBackgroundـView.clipsToBounds = true
         selectionBackgroundـView.roundedBorders(radius: selectionViewCornerRadius)
+        self.roundedBorders(radius: 0, borderColor: .black, borderWidth: 1)
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         dayLabel.textAlignment = .center
         dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
