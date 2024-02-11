@@ -3,7 +3,7 @@
 ## Installation Via SPM:
 https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 
-## Usage
+## Usage:
 1 - After installing the SPM, now you are ready to import the Calendar
 <p align="center">
       <a href="https://drive.google.com/uc?export=view&id=1CHnxMiXbu9smkQDr0Fg8aN1q5S7viVyY"><img src="https://drive.google.com/uc?export=view&id=1CHnxMiXbu9smkQDr0Fg8aN1q5S7viVyY" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
@@ -70,5 +70,5 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
       <a href="https://drive.google.com/uc?export=view&id=1UWW4HSTevfR8sPuAHGC7X-tmzanW_rM3"><img src="https://drive.google.com/uc?export=view&id=1UWW4HSTevfR8sPuAHGC7X-tmzanW_rM3" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 </p>
 
-
+## Attachments:
 https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f35eede9-8b59-469f-a7b6-1778ff01ecb4
