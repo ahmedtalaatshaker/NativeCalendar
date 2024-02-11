@@ -153,7 +153,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     func initUi(){
         fromNib(viewType: Self.self, frombunde: Bundle.module)
-        setupCalendarCollectionView()
+//        setupCalendarCollectionView()
         monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
