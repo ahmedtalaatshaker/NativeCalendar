@@ -6,22 +6,8 @@
 //
 
 import UIKit
-protocol CalendarCell: ReusableView {
-    func setDay(day: Day<Codable>?, isMonthView: Bool)
-    func setupView()
-    func setColors(defaultLabelColor: UIColor,
-                   selectedLabelColor: UIColor,
-                   offDaysColor: UIColor,
-                   selectedBGColor: [CGColor])
-    func setFromTo(text: String)
-    func showLeft_rightBGs()
-    func resetView()
-    func updateSelectionStatus(isMonthView: Bool)
-    func applySelectedStyle()
-    func applyDefaultStyle(isWithinDisplayedMonth: Bool)
-}
 
-class CalendarDayCell: UICollectionViewCell, CalendarCell {
+class CalendarDayCell: UICollectionViewCell {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
