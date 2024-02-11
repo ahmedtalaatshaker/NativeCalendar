@@ -33,36 +33,39 @@ extension CalendarView: UICollectionViewDataSource {
     }
     
     func setCell(cell: UICollectionViewCell, day: Day<Codable>) -> UICollectionViewCell{
-        switch cellType {
-        case .CalendarNewCellType:
-            guard let cell = cell as? CalendarNewCell else { return cell }
-            cell.setColors(defaultLabelColor: defaultLabelColor,
-                           selectedLabelColor: selectedLabelColor,
-                           offDaysColor: offDaysColor,
-                           selectedBGColor: selectedBGColor)
-            cell.setupView()
-            cell.setDay(day: day, isMonthView: isMonthView)
-            if selectDateBetweenFrom_To(date: day.date) { cell.showLeft_rightBGs() }
-            guard let labelText = day.fromToLabel else { return cell }
-            cell.setFromTo(text: labelText)
-            return cell
+        guard let cell = cell as? CommonFunc else { return cell }
+        return cell.setCell(cell: cell as! UICollectionViewCell, day: day)
 
-        case .CalendarDayCellType:
-            guard let cell = cell as? CalendarDayCell else { return cell }
-            cell.setColors(defaultLabelColor: defaultLabelColor,
-                           selectedLabelColor: selectedLabelColor,
-                           offDaysColor: offDaysColor,
-                           selectedBGColor: selectedBGColor)
-            cell.setupView()
-            cell.setDay(day: day, isMonthView: isMonthView)
-            if selectDateBetweenFrom_To(date: day.date) { cell.showLeft_rightBGs() }
-            guard let labelText = day.fromToLabel else { return cell }
-            cell.setFromTo(text: labelText)
-            return cell
-
-        case .none:
-            fatalError("cell type error")
-        }
+//        switch cellType {
+//        case .CalendarNewCellType:
+//            guard let cell = cell as? CalendarNewCell else { return cell }
+//            cell.setColors(defaultLabelColor: defaultLabelColor,
+//                           selectedLabelColor: selectedLabelColor,
+//                           offDaysColor: offDaysColor,
+//                           selectedBGColor: selectedBGColor)
+//            cell.setupView()
+//            cell.setDay(day: day, isMonthView: isMonthView)
+//            if selectDateBetweenFrom_To(date: day.date) { cell.showLeft_rightBGs() }
+//            guard let labelText = day.fromToLabel else { return cell }
+//            cell.setFromTo(text: labelText)
+//            return cell
+//
+//        case .CalendarDayCellType:
+//            guard let cell = cell as? CalendarDayCell else { return cell }
+//            cell.setColors(defaultLabelColor: defaultLabelColor,
+//                           selectedLabelColor: selectedLabelColor,
+//                           offDaysColor: offDaysColor,
+//                           selectedBGColor: selectedBGColor)
+//            cell.setupView()
+//            cell.setDay(day: day, isMonthView: isMonthView)
+//            if selectDateBetweenFrom_To(date: day.date) { cell.showLeft_rightBGs() }
+//            guard let labelText = day.fromToLabel else { return cell }
+//            cell.setFromTo(text: labelText)
+//            return cell
+//
+//        case .none:
+//            fatalError("cell type error")
+//        }
     }
 }
 
