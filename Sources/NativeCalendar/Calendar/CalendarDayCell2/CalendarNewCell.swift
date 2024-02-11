@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarDayCellNew: UICollectionViewCell, ReusableView, CalendarCell {
+class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
     @IBOutlet weak var selectionBackgroundـView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
@@ -93,7 +93,7 @@ class CalendarDayCellNew: UICollectionViewCell, ReusableView, CalendarCell {
 }
 
 // MARK: - Appearance
-extension CalendarDayCellNew {
+extension CalendarNewCell {
     // 1
     func updateSelectionStatus(isMonthView: Bool) {
         guard let day = day else { return }
