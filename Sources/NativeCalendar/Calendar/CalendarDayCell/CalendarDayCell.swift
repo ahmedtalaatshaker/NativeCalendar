@@ -102,9 +102,8 @@ class CalendarDayCell: UICollectionViewCell {
             selectionBackgroundView.roundedCorner(cornerRadii: selectionViewCornerRadius, corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         }
         if leftBG != nil {
-            leftBG.isHidden = text != From_to.to.rawValue
-            rightBG.isHidden = text == From_to.from.rawValue
-
+            leftBG.isHidden = text == From_to.to.rawValue
+            rightBG.isHidden = text != From_to.from.rawValue
         }
         
     }
