@@ -18,17 +18,10 @@ extension CalendarView: UICollectionViewDataSource {
         var day = daysToBeShown[indexPath.row]
         day.cellIndex = indexPath.row
 
-        // TODO: here is the error
-        var cell = UICollectionViewCell()
-        switch cellType {
-        case .CalendarNewCellType:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarNewCell", for: indexPath) as! CalendarNewCell
-        case .CalendarDayCellType:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCell", for: indexPath) as! CalendarDayCell
-        case .none:
-            break
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarNewCell", for: indexPath) as? CalendarNewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCell", for: indexPath) as? CalendarDayCell else { fatalError("Wrong cell type for section 0. Expected CellTypeOne") }
+            return setCell(cell: cell, day: day)
         }
-        
         return setCell(cell: cell, day: day)
     }
     
