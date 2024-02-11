@@ -6,58 +6,7 @@
 //
 
 import UIKit
-protocol CommonFunc {
-    
-    var defaultLabelColor: UIColor! { get set }
-    var selectedLabelColor: UIColor! { get set }
-    var offDaysColor: UIColor! { get set }
-    var selectedBGColor: [CGColor]! { get set }
-
-    var isMonthView: Bool! { get set }
-    var selectionType: SelectionType! { get set }
-    var userSelectedDate: [UserSelection<Codable>]! { get set }
-
-    
-    func setCell(cell: UICollectionViewCell, day: Day<Codable>) -> UICollectionViewCell
-    func selectDateBetweenFrom_To(date: Date) -> Bool
-    func setupView()
-    func setDay(day: Day<Codable>?, isMonthView: Bool)
-    func showLeft_rightBGs()
-    func setFromTo(text: String)
-    func setColors(defaultLabelColor: UIColor,
-                   selectedLabelColor: UIColor,
-                   offDaysColor: UIColor,
-                   selectedBGColor: [CGColor])
-}
-
-extension CommonFunc{
-    func setCell(cell: UICollectionViewCell, day: Day<Codable>) -> UICollectionViewCell{
-        guard let cell = cell as? CommonFunc else { return cell }
-        cell.setColors(defaultLabelColor: defaultLabelColor,
-                       selectedLabelColor: selectedLabelColor,
-                       offDaysColor: offDaysColor,
-                       selectedBGColor: selectedBGColor)
-        cell.setupView()
-        cell.setDay(day: day, isMonthView: isMonthView)
-        if selectDateBetweenFrom_To(date: day.date) { cell.showLeft_rightBGs() }
-        guard let labelText = day.fromToLabel else { return cell as! UICollectionViewCell }
-        cell.setFromTo(text: labelText)
-        return cell as! UICollectionViewCell
-    }
-    
-    func selectDateBetweenFrom_To(date: Date) -> Bool {
-        if selectionType == .from_to &&
-            userSelectedDate.count == 2 {
-            let selectedDateFrom = Date(timeIntervalSince1970: userSelectedDate[0].dateUTC)
-            let selectedDateTo = Date(timeIntervalSince1970: userSelectedDate[1].dateUTC)
-            return date < selectedDateTo && date > selectedDateFrom
-        }
-        return false
-    }
-}
-
-class CalendarDayCell: UICollectionViewCell, CommonFunc {
-
+class CalendarDayCell: UICollectionViewCell {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
@@ -71,10 +20,7 @@ class CalendarDayCell: UICollectionViewCell, CommonFunc {
     var selectedLabelColor: UIColor!
     var offDaysColor: UIColor!
     var selectedBGColor: [CGColor]!
-    var isMonthView: Bool!
-    var selectionType: SelectionType!
-    var userSelectedDate: [UserSelection<Codable>]!
-
+    
     private lazy var accessibilityDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
@@ -115,12 +61,6 @@ class CalendarDayCell: UICollectionViewCell, CommonFunc {
         rightBG.isHidden = true
     }
     
-    func setProtocolVars(isMonthView: Bool!, selectionType: SelectionType!, userSelectedDate: [UserSelection<Codable>]!) {
-        self.isMonthView = isMonthView
-        self.selectionType = selectionType
-        self.userSelectedDate = userSelectedDate
-    }
-
     func setColors(defaultLabelColor: UIColor,
                    selectedLabelColor: UIColor,
                    offDaysColor: UIColor,
