@@ -99,3 +99,9 @@ enum WeekIndex {
         }
     }
 }
+
+
+enum From_to: String {
+    case from = "From"
+    case to = "To"
+}
