@@ -71,6 +71,7 @@ class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
+        selectionBackgroundـView.setGradientBackground(colors: selectedBGColor)
         selectionBackgroundـView.layer.borderColor = UIColor.black.cgColor
         resetView()
     }
