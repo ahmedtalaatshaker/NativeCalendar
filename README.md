@@ -1,4 +1,4 @@
-# NativeCalendar
+# Native Calendar
 
 ## Installation Via SPM:
 https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
