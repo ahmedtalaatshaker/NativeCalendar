@@ -6,32 +6,11 @@
 //
 
 import UIKit
-extension UICollectionViewCell: ReusableView {
-    
-}
+extension UICollectionViewCell: ReusableView { }
 
 public enum CalendarCellType: String {
     case CalendarNewCellType
     case CalendarDayCellType
-    
-    func getCalendarCell() -> UICollectionViewCell {
-        switch self {
-        case .CalendarNewCellType:
-            return CalendarNewCell()
-        case .CalendarDayCellType:
-            return CalendarDayCell()
-        }
-    }
-    
-    func getCalendarCellType() -> UICollectionViewCell.Type {
-        switch self {
-        case .CalendarNewCellType:
-            return CalendarNewCell.self
-        case .CalendarDayCellType:
-            return CalendarDayCell.self
-        }
-    }
-
 }
 
 @available(iOS 13.0, *)
@@ -153,7 +132,6 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     func initUi(){
         fromNib(viewType: Self.self, frombunde: Bundle.module)
-//        setupCalendarCollectionView()
         monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
@@ -165,7 +143,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     private func setupCalendarCollectionView(){
         calendarCollectionView.registerReusableCell(CalendarDayCell.self)
-        calendarCollectionView.registerReusableCell(CalendarNewCell.self)
+        calendarCollectionView.registerReusableCell(CalendarCell.self)
 
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
