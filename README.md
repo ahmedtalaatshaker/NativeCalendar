@@ -71,5 +71,5 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 </p>
 
 ## Attachments:
-
+## - Single Selection:
 https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f35eede9-8b59-469f-a7b6-1778ff01ecb4
