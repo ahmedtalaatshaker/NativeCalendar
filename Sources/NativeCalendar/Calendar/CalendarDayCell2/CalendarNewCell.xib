@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS2-sT-HVq">
-                    <rect key="frame" x="2" y="56" width="56" height="2"/>
+                    <rect key="frame" x="4" y="56" width="52" height="2"/>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="Lcc-Xq-7O2"/>
@@ -43,7 +43,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="RL5-UF-quv" firstAttribute="top" secondItem="JBR-9P-5mp" secondAttribute="bottom" constant="2" id="1R8-wq-Af3"/>
-                <constraint firstAttribute="trailing" secondItem="pS2-sT-HVq" secondAttribute="trailing" constant="2" id="5Wm-aF-Esp"/>
+                <constraint firstAttribute="trailing" secondItem="pS2-sT-HVq" secondAttribute="trailing" constant="4" id="5Wm-aF-Esp"/>
                 <constraint firstAttribute="trailing" secondItem="JBR-9P-5mp" secondAttribute="trailing" constant="3" id="66W-1A-MEv"/>
                 <constraint firstItem="WB4-jO-GrO" firstAttribute="leading" secondItem="ADg-LZ-eD7" secondAttribute="leading" id="HH6-yK-P2a"/>
                 <constraint firstAttribute="trailing" secondItem="WB4-jO-GrO" secondAttribute="trailing" id="MJb-Yk-4lx"/>
@@ -51,7 +51,7 @@
                 <constraint firstAttribute="bottom" secondItem="pS2-sT-HVq" secondAttribute="bottom" constant="2" id="TVD-RO-Xzy"/>
                 <constraint firstItem="JBR-9P-5mp" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" constant="1" id="UnR-tt-tON"/>
                 <constraint firstAttribute="trailing" secondItem="RL5-UF-quv" secondAttribute="trailing" constant="3" id="aTk-kl-eE5"/>
-                <constraint firstItem="pS2-sT-HVq" firstAttribute="leading" secondItem="ADg-LZ-eD7" secondAttribute="leading" constant="2" id="bDh-Dk-r2H"/>
+                <constraint firstItem="pS2-sT-HVq" firstAttribute="leading" secondItem="ADg-LZ-eD7" secondAttribute="leading" constant="4" id="bDh-Dk-r2H"/>
                 <constraint firstItem="WB4-jO-GrO" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" id="uYF-iv-mrr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
