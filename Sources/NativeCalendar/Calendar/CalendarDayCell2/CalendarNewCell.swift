@@ -69,6 +69,7 @@ class CalendarNewCell: UICollectionViewCell, ReusableView, CalendarCell {
         self.offDaysColor = offDaysColor
         self.selectedBGColor = selectedBGColor
         selectionBackgroundـView.setGradientBackground(colors: selectedBGColor)
+        eventIndicator.setGradientBackground(colors: [selectedBGColor.first ?? UIColor.black.cgColor, UIColor.cyan.cgColor])
         selectionBackgroundـView.layer.borderColor = UIColor.black.cgColor
         resetView()
     }
