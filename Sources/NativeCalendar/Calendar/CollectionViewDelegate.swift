@@ -17,7 +17,7 @@ extension CalendarView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var day = daysToBeShown[indexPath.row]
         // TODO: here is the error
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarNewCell", for: indexPath) as! CalendarNewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
         cell.setColors(defaultLabelColor: defaultLabelColor,
                        selectedLabelColor: selectedLabelColor,
                        offDaysColor: offDaysColor,
