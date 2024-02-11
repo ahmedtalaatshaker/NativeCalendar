@@ -127,6 +127,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         daysLabel.forEach { dayLabel in
             dayLabel.text = firstWeekDay.weekDays[dayLabel.tag]
         }
+        setupCalendarCollectionView()
     }
     
     public func setCellStyle(defaultLabelColor: UIColor,
@@ -152,7 +153,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     
     func initUi(){
         fromNib(viewType: Self.self, frombunde: Bundle.module)
-        setupCalendarCollectionView()
+//        setupCalendarCollectionView()
         monthLabel.text = dateFormatterShowMonth.string(from: baseDate)
         calendarCollectionView.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
