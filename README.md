@@ -71,10 +71,4 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 </p>
 
 
-5 - Attachments
 https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f35eede9-8b59-469f-a7b6-1778ff01ecb4
-
-<p align="center">
-</p>
-
-
