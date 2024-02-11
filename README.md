@@ -71,11 +71,11 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
 </p>
 
 ## Attachments:
-<p> - Single Selection </p>
+<p> * Single Selection </p>
 https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/f35eede9-8b59-469f-a7b6-1778ff01ecb4
-- MultiSelection
+<p> * MultiSelection </p>
 https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/24f8e882-a382-4ab0-bb7e-94cb77b5d830
-- From To Selection
+<p> * From To Selection </p>
 https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/d56b087f-f273-45d6-8b01-3d5ec192c30c
 
 
