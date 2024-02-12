@@ -72,10 +72,10 @@ extension UIView {
 //            self.layer.insertSublayer(gradientLayer, at:0)
 //            return
 //        }
-        gradientLayer.removeFromSuperlayer()
-        self.layer.insertSublayer(gradientLayer, at:0)
+//        gradientLayer.removeFromSuperlayer()
+//        self.layer.insertSublayer(gradientLayer, at:0)
 
-//        self.layer.replaceSublayer(subLayer, with: gradientLayer)
+        self.layer.replaceSublayer(gradientLayer, with: gradientLayer)
     }
 
 }
