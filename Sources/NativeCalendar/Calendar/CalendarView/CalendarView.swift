@@ -71,12 +71,14 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     var endDate: Date!
     var startDate: Date!
     var firstWeekDay: dayWeek!
+    var weekend: [dayWeek]!
     var getSelectedDate: (([UserSelection<Codable>]) -> Void)!
     var selectionType: SelectionType = .single
     // Cell Colors
     var defaultLabelColor: UIColor = .label
     var selectedLabelColor: UIColor = .white
     var offDaysColor: UIColor = .secondaryLabel
+    var weekendDayColor: UIColor = .red
     var selectedBGColor: [CGColor] = [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1).cgColor, #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).cgColor, #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1).cgColor]
     var cellType: CalendarCellType!
     
@@ -87,6 +89,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
                         endDate: Date,
                         startDate: Date,
                         firstWeekDay: dayWeek,
+                        weekend: [dayWeek],
                         selectionType: SelectionType,
                         getSelectedDate: @escaping (([UserSelection<Codable>]) -> Void)) {
         self.calendar = calendar
@@ -98,6 +101,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
         self.getSelectedDate = getSelectedDate
         self.selectionType = selectionType
         self.cellType = cellType
+        self.weekend = weekend
 
         if startDate > baseDate {
             baseDate = startDate
@@ -112,10 +116,12 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     public func setCellStyle(defaultLabelColor: UIColor,
                              selectedLabelColor: UIColor,
                              offDaysColor: UIColor,
+                             weekendDayColor: UIColor,
                              selectedBGColor: [CGColor]) {
         self.defaultLabelColor = defaultLabelColor
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
+        self.weekendDayColor = weekendDayColor
         self.selectedBGColor = selectedBGColor
     }
     
@@ -165,6 +171,4 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     @IBAction func changeMonth_WeekView(_ sender: UIButton) {
         isMonthView.toggle()
     }
-    
-    
 }

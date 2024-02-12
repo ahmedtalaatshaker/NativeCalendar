@@ -96,8 +96,21 @@ extension CalendarView {
             cellIndex: 0,
             isOffDay: offDates.contains(date), 
             utc: date.timeIntervalSince1970,
-            events: datesWithEvents.first(where: {$0.date == date})?.events
+            events: datesWithEvents.first(where: {$0.date == date})?.events,
+            isWeekend: isWeekendDay(for: date)
         )
+    }
+    
+    private func isWeekendDay(for date: Date) -> Bool{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayInWeek = dateFormatter.string(from: date)
+        for day in weekend {
+            if dayInWeek.lowercased().contains(day.day) {
+                return true
+            }
+        }
+        return false
     }
     
     func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date, additionalDays: Int) -> [Day<Codable>] {

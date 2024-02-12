@@ -17,5 +17,6 @@ struct Day<T> {
     var utc: TimeInterval
     var fromToLabel: String?
     var events: [T]?
+    var isWeekend: Bool
 }
 

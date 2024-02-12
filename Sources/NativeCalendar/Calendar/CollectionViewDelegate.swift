@@ -37,6 +37,7 @@ extension CalendarView: UICollectionViewDataSource {
         cell.setColors(defaultLabelColor: defaultLabelColor,
                        selectedLabelColor: selectedLabelColor,
                        offDaysColor: offDaysColor,
+                       weekendDayColor: weekendDayColor,
                        selectedBGColor: selectedBGColor)
         cell.setupView()
         cell.setDay(day: day, isMonthView: isMonthView)

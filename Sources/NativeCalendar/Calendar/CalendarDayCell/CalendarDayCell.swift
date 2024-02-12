@@ -19,6 +19,7 @@ class CalendarDayCell: UICollectionViewCell {
     var defaultLabelColor: UIColor!
     var selectedLabelColor: UIColor!
     var offDaysColor: UIColor!
+    var weekendDayColor: UIColor!
     var selectedBGColor: [CGColor]!
     var selectionViewCornerRadius: CGFloat {
         get {
@@ -77,10 +78,12 @@ class CalendarDayCell: UICollectionViewCell {
     func setColors(defaultLabelColor: UIColor,
                    selectedLabelColor: UIColor,
                    offDaysColor: UIColor,
+                   weekendDayColor: UIColor,
                    selectedBGColor: [CGColor]) {
         self.defaultLabelColor = defaultLabelColor
         self.selectedLabelColor = selectedLabelColor
         self.offDaysColor = offDaysColor
+        self.weekendDayColor = weekendDayColor
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
         if leftBG != nil {
@@ -140,8 +143,20 @@ extension CalendarDayCell {
         if day.isSelected {
             applySelectedStyle()
         } else {
-            applyDefaultStyle(isWithinDisplayedMonth: (day.isWithinDisplayedMonth || !isMonthView) && !day.isOffDay)
+            if day.isWeekend {
+                applyDefaultStyleForWeekend()
+            } else {
+                applyDefaultStyle(isWithinDisplayedMonth: (day.isWithinDisplayedMonth || !isMonthView) && !day.isOffDay)
+            }
         }
+    }
+    
+    func applyDefaultStyleForWeekend() {
+        accessibilityTraits.remove(.selected)
+        accessibilityHint = "Tap to select"
+        dayLabel.textColor = weekendDayColor
+        selectionBackgroundView.isHidden = true
+        eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
     }
     
     func applySelectedStyle() {
