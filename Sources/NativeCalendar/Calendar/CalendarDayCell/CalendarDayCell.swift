@@ -89,6 +89,7 @@ class CalendarDayCell: UICollectionViewCell {
         } else {
             eventIndicator.setGradientBackground(colors: [selectedBGColor.first ?? UIColor.black.cgColor, UIColor.cyan.cgColor])
             selectionBackgroundView.layer.borderColor = UIColor.black.cgColor
+            self.applyDropShadow(radius: 4)
         }
 
         resetView()
