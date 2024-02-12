@@ -16,17 +16,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WB4-jO-GrO">
-                    <rect key="frame" x="0.0" y="2" width="60" height="56"/>
+                    <rect key="frame" x="0.0" y="3" width="60" height="54"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBR-9P-5mp">
-                    <rect key="frame" x="38" y="1" width="19" height="8.6666666666666661"/>
+                    <rect key="frame" x="38" y="3.9999999999999991" width="19" height="8.6666666666666643"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="7"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL5-UF-quv">
-                    <rect key="frame" x="15" y="11.666666666666664" width="42" height="21"/>
+                    <rect key="frame" x="15" y="14.666666666666664" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -47,12 +47,12 @@
                 <constraint firstAttribute="trailing" secondItem="JBR-9P-5mp" secondAttribute="trailing" constant="3" id="66W-1A-MEv"/>
                 <constraint firstItem="WB4-jO-GrO" firstAttribute="leading" secondItem="ADg-LZ-eD7" secondAttribute="leading" id="HH6-yK-P2a"/>
                 <constraint firstAttribute="trailing" secondItem="WB4-jO-GrO" secondAttribute="trailing" id="MJb-Yk-4lx"/>
-                <constraint firstAttribute="bottom" secondItem="WB4-jO-GrO" secondAttribute="bottom" constant="2" id="Skg-RR-2hu"/>
+                <constraint firstAttribute="bottom" secondItem="WB4-jO-GrO" secondAttribute="bottom" constant="3" id="Skg-RR-2hu"/>
                 <constraint firstAttribute="bottom" secondItem="pS2-sT-HVq" secondAttribute="bottom" constant="4" id="TVD-RO-Xzy"/>
-                <constraint firstItem="JBR-9P-5mp" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" constant="1" id="UnR-tt-tON"/>
+                <constraint firstItem="JBR-9P-5mp" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" constant="4" id="UnR-tt-tON"/>
                 <constraint firstAttribute="trailing" secondItem="RL5-UF-quv" secondAttribute="trailing" constant="3" id="aTk-kl-eE5"/>
                 <constraint firstItem="pS2-sT-HVq" firstAttribute="centerX" secondItem="ADg-LZ-eD7" secondAttribute="centerX" id="sCW-6u-OmM"/>
-                <constraint firstItem="WB4-jO-GrO" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" constant="2" id="uYF-iv-mrr"/>
+                <constraint firstItem="WB4-jO-GrO" firstAttribute="top" secondItem="ADg-LZ-eD7" secondAttribute="top" constant="3" id="uYF-iv-mrr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
