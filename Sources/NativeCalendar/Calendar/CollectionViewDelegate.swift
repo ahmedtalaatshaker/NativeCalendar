@@ -20,11 +20,11 @@ extension CalendarView: UICollectionViewDataSource {
 
         switch cellType {
         case .CalendarNewCellType:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as? CalendarCell else {fatalError("cell type error")}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCell.reusableIdentifier, for: indexPath) as? CalendarCell else {fatalError("cell type error")}
             return setCell(cell: cell, day: day)
 
         case .CalendarDayCellType:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCell", for: indexPath) as? CalendarDayCell else {fatalError("cell type error")}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarDayCell.reusableIdentifier, for: indexPath) as? CalendarDayCell else {fatalError("cell type error")}
             return setCell(cell: cell, day: day)
             
         case .none:
