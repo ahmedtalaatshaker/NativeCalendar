@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class CalendarCell: CalendarDayCell {
     override var selectionViewCornerRadius: CGFloat {
         get {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+@available(iOS 13.0, *)
 class CalendarDayCell: UICollectionViewCell {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
@@ -114,6 +115,19 @@ class CalendarDayCell: UICollectionViewCell {
     }
     
     func showLeft_rightBGs() {
+        var colors: [CGColor] = []
+        selectedBGColor.forEach { color in
+            colors.append(color.copy(alpha: 0.7) ?? .init(red: 0, green: 0, blue: 0, alpha: 0))
+        }
+        
+        selectionBackgroundView.setGradientBackground(colors: colors)
+
+        if leftBG != nil {
+            leftBG.setGradientBackground(colors: colors)
+            rightBG.setGradientBackground(colors: colors)
+        }
+
+        
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
         if leftBG != nil {
             leftBG.isHidden = false
@@ -131,6 +145,7 @@ class CalendarDayCell: UICollectionViewCell {
 }
 
 // MARK: - Appearance
+@available(iOS 13.0, *)
 extension CalendarDayCell {
     // 1
     func updateSelectionStatus(isMonthView: Bool) {
