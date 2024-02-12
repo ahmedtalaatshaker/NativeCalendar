@@ -67,12 +67,15 @@ extension UIView {
         gradientLayer.locations = [0.0, 0.5, 1.0]
         
         gradientLayer.frame = self.bounds
-        guard let subLayer = self.layer.sublayers?.first,
-              subLayer == gradientLayer else {
-            self.layer.insertSublayer(gradientLayer, at:0)
-            return
-        }
-        self.layer.replaceSublayer(subLayer, with: gradientLayer)
+//        guard let subLayer = self.layer.sublayers?.first,
+//              subLayer == gradientLayer else {
+//            self.layer.insertSublayer(gradientLayer, at:0)
+//            return
+//        }
+        gradientLayer.removeFromSuperlayer()
+        self.layer.insertSublayer(gradientLayer, at:0)
+
+//        self.layer.replaceSublayer(subLayer, with: gradientLayer)
     }
 
 }
