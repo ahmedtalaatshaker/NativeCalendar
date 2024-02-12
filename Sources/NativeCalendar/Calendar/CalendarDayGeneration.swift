@@ -106,7 +106,7 @@ extension CalendarView {
         dateFormatter.dateFormat = "EEEE"
         let dayInWeek = dateFormatter.string(from: date)
         for day in weekend {
-            if dayInWeek.lowercased().contains(day.day) {
+            if dayInWeek.contains(day.day) {
                 return true
             }
         }
