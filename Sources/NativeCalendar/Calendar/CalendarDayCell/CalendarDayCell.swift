@@ -85,8 +85,8 @@ class CalendarDayCell: UICollectionViewCell {
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
         if leftBG != nil {
-//            leftBG.setGradientBackground(colors: selectedBGColor)
-//            rightBG.setGradientBackground(colors: selectedBGColor)
+            leftBG.setGradientBackground(colors: setColorWithAlpha())
+            rightBG.setGradientBackground(colors: setColorWithAlpha())
         } else {
             eventIndicator.setGradientBackground(colors: [selectedBGColor.first ?? UIColor.black.cgColor, UIColor.cyan.cgColor])
             selectionBackgroundView.layer.borderColor = UIColor.black.cgColor
@@ -114,19 +114,15 @@ class CalendarDayCell: UICollectionViewCell {
         }
     }
     
+    private func setColorWithAlpha() -> [CGColor] {
+        return selectedBGColor.map { color in
+            color.copy(alpha: 0.2) ?? .init(red: 0, green: 0, blue: 0, alpha: 0)
+        }
+    }
+    
     func showLeft_rightBGs() {
-        var colors: [CGColor] = []
-        selectedBGColor.forEach { color in
-            colors.append(color.copy(alpha: 0.2) ?? .init(red: 0, green: 0, blue: 0, alpha: 0))
-        }
-        
+        var colors: [CGColor] = setColorWithAlpha()
         selectionBackgroundView.setGradientBackground(colors: colors)
-
-        if leftBG != nil {
-            leftBG.setGradientBackground(colors: colors)
-            rightBG.setGradientBackground(colors: colors)
-        }
-
         
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
         if leftBG != nil {
