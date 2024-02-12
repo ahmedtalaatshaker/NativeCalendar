@@ -85,8 +85,8 @@ class CalendarDayCell: UICollectionViewCell {
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
         if leftBG != nil {
-            leftBG.setGradientBackground(colors: selectedBGColor)
-            rightBG.setGradientBackground(colors: selectedBGColor)
+//            leftBG.setGradientBackground(colors: selectedBGColor)
+//            rightBG.setGradientBackground(colors: selectedBGColor)
         } else {
             eventIndicator.setGradientBackground(colors: [selectedBGColor.first ?? UIColor.black.cgColor, UIColor.cyan.cgColor])
             selectionBackgroundView.layer.borderColor = UIColor.black.cgColor
