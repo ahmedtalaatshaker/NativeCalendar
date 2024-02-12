@@ -67,6 +67,7 @@ extension UIView {
         gradientLayer.locations = [0.0, 0.5, 1.0]
         
         gradientLayer.frame = self.bounds
+        self.layer.removeAllAnimations()
         self.layer.insertSublayer(gradientLayer, at:0)
     }
 
