@@ -117,7 +117,7 @@ class CalendarDayCell: UICollectionViewCell {
     func showLeft_rightBGs() {
         var colors: [CGColor] = []
         selectedBGColor.forEach { color in
-            colors.append(color.copy(alpha: 0.7) ?? .init(red: 0, green: 0, blue: 0, alpha: 0))
+            colors.append(color.copy(alpha: 0.2) ?? .init(red: 0, green: 0, blue: 0, alpha: 0))
         }
         
         selectionBackgroundView.setGradientBackground(colors: colors)
