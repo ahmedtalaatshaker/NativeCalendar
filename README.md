@@ -90,7 +90,7 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
             </li>
             <li>
                   <h3>Square Cell:</h3>
-                  <img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/4c9e4269-9c42-4269-b580-4b95e07a148c.gif" style="width: 250px; height: 450px" />
+                  <img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/995a02ee-4647-431f-835e-ea5510f8a381.gif" style="width: 250px; height: 450px" />
             </li>
       </lr>
 </table>
