@@ -144,17 +144,17 @@ extension CalendarDayCell {
             applySelectedStyle()
         } else {
             if day.isWeekend {
-                applyDefaultStyleForWeekend()
+                applyDefaultStyleForWeekend(isOffDay: day.isOffDay)
             } else {
                 applyDefaultStyle(isWithinDisplayedMonth: (day.isWithinDisplayedMonth || !isMonthView) && !day.isOffDay)
             }
         }
     }
     
-    func applyDefaultStyleForWeekend() {
+    func applyDefaultStyleForWeekend(isOffDay: Bool) {
         accessibilityTraits.remove(.selected)
         accessibilityHint = "Tap to select"
-        dayLabel.textColor = weekendDayColor
+        dayLabel.textColor = isOffDay ? offDaysColor : weekendDayColor
         selectionBackgroundView.isHidden = true
         eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
     }
