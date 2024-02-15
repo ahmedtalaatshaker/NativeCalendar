@@ -44,7 +44,7 @@ extension CalendarView {
         
         let daysToAdd = calculateUpper_LowerDates(offsetInInitialRow: offsetInInitialRow)
                 
-        var days: [Day<Codable>] = prepareDateData(numberOfDaysInMonth: numberOfDaysInMonth, daysToAdd: daysToAdd, firstDayOfMonth: firstDayOfMonth)
+        var days: [Day<Codable>] = prepareDate(numberOfDaysInMonth: numberOfDaysInMonth, daysToAdd: daysToAdd, firstDayOfMonth: firstDayOfMonth)
         
         let daysInLastWeek = days.count % 7
         let remainningDays = 7 - daysInLastWeek
@@ -66,7 +66,7 @@ extension CalendarView {
         }
     }
     
-    private func prepareDateData(numberOfDaysInMonth: Int, daysToAdd: Int, firstDayOfMonth: Date) -> [Day<Codable>] {
+    private func prepareDate(numberOfDaysInMonth: Int, daysToAdd: Int, firstDayOfMonth: Date) -> [Day<Codable>] {
         return (1..<(numberOfDaysInMonth + daysToAdd))
             .map { day in
                 let isWithinDisplayedMonth = day >= daysToAdd

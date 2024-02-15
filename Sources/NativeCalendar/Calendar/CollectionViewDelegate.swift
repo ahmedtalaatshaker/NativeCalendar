@@ -98,7 +98,6 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         days = setNotSelected(days: days)
         days[index].isSelected = true
         userSelectedDate = [UserSelection(dateUTC: days[index].date.timeIntervalSince1970, events: days[index].events)]
-
     }
     
     private func applyMultiSelection(for index: Int) {
