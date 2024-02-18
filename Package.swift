@@ -12,6 +12,7 @@ let package = Package(
             targets: ["NativeCalendar"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/ahmedtalaatshaker/TestPackage", from: "1.0.1")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
