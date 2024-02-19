@@ -6,7 +6,7 @@
 //
 
 import UIKit
-open class CalendarDayCell: UICollectionViewCell {
+class CalendarDayCell: UICollectionViewCell {
     @IBOutlet weak var selectionBackgroundView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var fromToLabel: UILabel!
@@ -46,7 +46,7 @@ open class CalendarDayCell: UICollectionViewCell {
         accessibilityTraits = .button
     }
     
-    open override func prepareForReuse() {
+    override func prepareForReuse() {
         super.prepareForReuse()
     }
 
