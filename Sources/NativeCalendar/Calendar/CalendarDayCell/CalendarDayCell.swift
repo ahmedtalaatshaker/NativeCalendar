@@ -120,8 +120,8 @@ class CalendarDayCell: UICollectionViewCell {
     func showLeft_rightBGs(isHidden: Bool) {
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
         if leftBG != nil {
-            leftBG.isHidden = false
-            rightBG.isHidden = false
+            leftBG.isHidden = isHidden
+            rightBG.isHidden = isHidden
         }
     }
 
