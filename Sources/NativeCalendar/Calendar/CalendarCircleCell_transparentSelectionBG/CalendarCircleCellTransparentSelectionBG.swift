@@ -33,10 +33,10 @@ class CalendarCircleCellTransparentSelectionBG: CalendarDayCell {
         leftBG != nil ? showHideLeft_rightMargin(text: text) : nil
     }
     
-    override func showLeft_rightBGs() {
+    override func showLeft_rightBGs(isHidden: Bool) {
         if leftBG != nil {
-            leftBG.isHidden = false
-            rightBG.isHidden = false
+            leftBG.isHidden = isHidden
+            rightBG.isHidden = isHidden
         }
     }
     
@@ -52,7 +52,7 @@ class CalendarCircleCellTransparentSelectionBG: CalendarDayCell {
         } else {
             if day.isDateBetween {
                 selectionBackgroundView.isHidden = true
-                showLeft_rightBGs()
+                showLeft_rightBGs(isHidden: false)
             }
         }
     }

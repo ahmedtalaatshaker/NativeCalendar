@@ -117,7 +117,7 @@ class CalendarDayCell: UICollectionViewCell {
         }
     }
     
-    func showLeft_rightBGs() {
+    func showLeft_rightBGs(isHidden: Bool) {
         selectionBackgroundView.roundedCorner(cornerRadii: 0, corners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner])
         if leftBG != nil {
             leftBG.isHidden = false
@@ -157,6 +157,7 @@ extension CalendarDayCell {
         dayLabel.textColor = isOffDay ? offDaysColor : weekendDayColor
         selectionBackgroundView.isHidden = true
         eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
+        showLeft_rightBGs(isHidden: true)
     }
     
     @objc func applySelectedStyle() {
@@ -174,5 +175,6 @@ extension CalendarDayCell {
         dayLabel.textColor = isWithinDisplayedMonth ? defaultLabelColor : offDaysColor
         selectionBackgroundView.isHidden = true
         eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
+        showLeft_rightBGs(isHidden: true)
     }
 }
