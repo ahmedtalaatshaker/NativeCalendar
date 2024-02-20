@@ -95,5 +95,5 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
       </lr>
 </table>
 
-## Demo:
+## Example:
 https://github.com/ahmedtalaatshaker/NativeCalendarExample
