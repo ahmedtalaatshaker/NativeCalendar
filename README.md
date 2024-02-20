@@ -89,6 +89,12 @@ https://github.com/ahmedtalaatshaker/NativeCalendar/tree/main
                  <img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/1c51a21c-60fd-46b7-b73e-e7cb06cd8128.gif" style="width: 250px; height: 450px" />
             </li>
             <li>
+                 <h3>Circle Cell with Transparent Backgound:</h3>
+                 <img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/c86874d9-3972-4d4f-9337-fd230e4d763d.gif" style="width: 250px; height: 450px" />
+            </li>
+      </lr>
+      <lr>
+            <li>
                   <h3>Square Cell "Sat & Fri as weekend":</h3>
                   <img src="https://github.com/ahmedtalaatshaker/NativeCalendar/assets/16456219/995a02ee-4647-431f-835e-ea5510f8a381.gif" style="width: 250px; height: 450px" />
             </li>
