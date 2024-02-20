@@ -20,10 +20,11 @@ class CalendarCircleCellTransparentSelectionBG: CalendarDayCell {
         self.weekendDayColor = weekendDayColor
         self.selectedBGColor = selectedBGColor
         selectionBackgroundView.setGradientBackground(colors: selectedBGColor)
-        leftBG.backgroundColor = .gray
-        rightBG.backgroundColor = .gray
-
         resetView()
+        
+        guard let color = selectedBGColor.first else { return }
+        leftBG.backgroundColor = UIColor(cgColor: color).withAlphaComponent(0.7)
+        rightBG.backgroundColor = UIColor(cgColor: color).withAlphaComponent(0.7)
     }
 
     override func setFromTo(text: String) {
@@ -56,5 +57,4 @@ class CalendarCircleCellTransparentSelectionBG: CalendarDayCell {
             }
         }
     }
-
 }
