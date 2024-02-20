@@ -10,6 +10,7 @@ struct Day<T> {
     let date: Date
     let number: String
     var isSelected: Bool
+    var isDateBetween: Bool
     let isWithinDisplayedMonth: Bool
     let isHaveEvents: Bool
     var cellIndex: Int

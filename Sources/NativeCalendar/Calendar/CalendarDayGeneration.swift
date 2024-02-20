@@ -90,7 +90,8 @@ extension CalendarView {
         return Day(
             date: date,
             number: dateFormatterShowDays.string(from: date),
-            isSelected: selectSameDate(date: date) || selectDateBetweenFrom_To(date: date),
+            isSelected: selectSameDate(date: date),
+            isDateBetween: selectDateBetweenFrom_To(date: date),
             isWithinDisplayedMonth: isWithinDisplayedMonth,
             isHaveEvents: datesWithEvents.contains(where: {$0.date == date && $0.events != nil}),
             cellIndex: 0,

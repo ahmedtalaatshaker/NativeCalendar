@@ -39,4 +39,22 @@ class CalendarCircleCellTransparentSelectionBG: CalendarDayCell {
             rightBG.isHidden = false
         }
     }
+    
+    override func applySelectedStyle() {
+        guard let day = day else { return }
+
+        accessibilityTraits.insert(.selected)
+        accessibilityHint = nil
+        dayLabel.textColor = selectedLabelColor
+        eventIndicator.backgroundColor = selectedLabelColor
+        if day.isSelected {
+            selectionBackgroundView.isHidden = false
+        } else {
+            if day.isDateBetween {
+                selectionBackgroundView.isHidden = true
+                showLeft_rightBGs()
+            }
+        }
+    }
+
 }

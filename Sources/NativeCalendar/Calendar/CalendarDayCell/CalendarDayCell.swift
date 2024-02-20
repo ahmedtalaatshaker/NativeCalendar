@@ -140,7 +140,7 @@ extension CalendarDayCell {
     func updateSelectionStatus(isMonthView: Bool) {
         guard let day = day else { return }
         
-        if day.isSelected {
+        if day.isSelected || day.isDateBetween{
             applySelectedStyle()
         } else {
             if day.isWeekend {
@@ -159,7 +159,7 @@ extension CalendarDayCell {
         eventIndicator.backgroundColor = UIColor(red: 0.749, green: 0.208, blue: 0.278, alpha: 1)
     }
     
-    func applySelectedStyle() {
+    @objc func applySelectedStyle() {
         accessibilityTraits.insert(.selected)
         accessibilityHint = nil
         dayLabel.textColor = selectedLabelColor
