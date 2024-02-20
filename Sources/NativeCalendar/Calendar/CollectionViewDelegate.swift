@@ -27,6 +27,10 @@ extension CalendarView: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarDayCell.reusableIdentifier, for: indexPath) as? CalendarDayCell else {fatalError("cell type error")}
             return setCell(cell: cell, day: day)
             
+        case .CalendarCircleCellTransparentSelectionBGType:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCircleCellTransparentSelectionBG.reusableIdentifier, for: indexPath) as? CalendarDayCell else {fatalError("cell type error")}
+            return setCell(cell: cell, day: day)
+
         case .none:
             fatalError("cell type error")
         }

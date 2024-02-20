@@ -11,6 +11,7 @@ extension UICollectionViewCell: ReusableView { }
 public enum CalendarCellType: String {
     case CalendarNewCellType
     case CalendarDayCellType
+    case CalendarCircleCellTransparentSelectionBGType
 }
 
 @available(iOS 13.0, *)
@@ -150,6 +151,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     private func setupCalendarCollectionView(){
         calendarCollectionView.registerReusableCell(CalendarDayCell.self)
         calendarCollectionView.registerReusableCell(CalendarCell.self)
+        calendarCollectionView.registerReusableCell(CalendarCircleCellTransparentSelectionBG.self)
 
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
