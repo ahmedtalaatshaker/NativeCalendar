@@ -79,6 +79,7 @@ extension CalendarView {
         return days.map { day in
             var _day = day
             _day.isSelected = false
+            _day.isDateBetween = false
             _day.fromToLabel = nil
             return _day
         }
