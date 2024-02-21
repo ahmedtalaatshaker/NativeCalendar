@@ -75,10 +75,12 @@ extension UIView {
         backgroundGradientLayer.frame = self.frame
         backgroundGradientLayer.colors = colors
         UIGraphicsBeginImageContext(backgroundGradientLayer.bounds.size)
-        backgroundGradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        guard let uiGraphicsGetCurrentContext = UIGraphicsGetCurrentContext() else { return UIColor.gray}
+        backgroundGradientLayer.render(in: uiGraphicsGetCurrentContext)
         let backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return UIColor(patternImage: backgroundColorImage!)
+        guard let backgroundColorImage = backgroundColorImage else { return UIColor.gray}
+        return UIColor(patternImage: backgroundColorImage)
     }
 
 }
