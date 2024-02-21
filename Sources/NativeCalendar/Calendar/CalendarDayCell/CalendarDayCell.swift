@@ -48,6 +48,7 @@ class CalendarDayCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.backgroundColor = .clear
     }
 
     func setDay(day: Day<Codable>?, isMonthView: Bool){
