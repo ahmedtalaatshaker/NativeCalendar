@@ -149,6 +149,7 @@ public class CalendarView: UIView, UICollectionViewDelegate {
     }
     
     private func setupCalendarCollectionView(){
+        calendarCollectionView.backgroundView = UIImageView(image: UIImage(named: "PathCalendar"))
         calendarCollectionView.registerReusableCell(CalendarDayCell.self)
         calendarCollectionView.registerReusableCell(CalendarCell.self)
         calendarCollectionView.registerReusableCell(CalendarCircleCellTransparentSelectionBG.self)
