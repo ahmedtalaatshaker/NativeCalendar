@@ -69,4 +69,16 @@ extension UIView {
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at:0)
     }
+    
+    func colorWithGradient(colors: [CGColor]) -> UIColor {
+        let backgroundGradientLayer = CAGradientLayer()
+        backgroundGradientLayer.frame = self.frame
+        backgroundGradientLayer.colors = colors
+        UIGraphicsBeginImageContext(backgroundGradientLayer.bounds.size)
+        backgroundGradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return UIColor(patternImage: backgroundColorImage!)
+    }
+
 }
