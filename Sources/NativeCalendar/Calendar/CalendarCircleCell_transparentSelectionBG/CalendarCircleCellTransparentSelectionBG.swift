@@ -24,8 +24,8 @@ class CalendarCircleCellTransparentSelectionBG: CalendarDayCell {
         
 //        guard let color1 = selectedBGColor.first?.components, let color2 = selectedBGColor[1].components else { return }
 //        let newColor = CGColor(red: color1[0], green: color2[1], blue: color1[2], alpha: 0.3)
-        leftBG.backgroundColor = colorWithGradient(frame: leftBG.frame, colors: selectedBGColor).withAlphaComponent(0.3) //UIColor(cgColor: color).withAlphaComponent(0.5)
-        rightBG.backgroundColor = colorWithGradient(frame: rightBG.frame, colors: selectedBGColor).withAlphaComponent(0.3) //UIColor(cgColor: color).withAlphaComponent(0.5)
+        leftBG.backgroundColor = colorWithGradient(frame: self.frame, colors: selectedBGColor).withAlphaComponent(0.3) //UIColor(cgColor: color).withAlphaComponent(0.5)
+        rightBG.backgroundColor = colorWithGradient(frame: self.frame, colors: selectedBGColor).withAlphaComponent(0.3) //UIColor(cgColor: color).withAlphaComponent(0.5)
 
 //        guard let color = selectedBGColor.first else { return }
 //        leftBG.backgroundColor = UIColor(cgColor: color).withAlphaComponent(0.5)
